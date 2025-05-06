@@ -175,154 +175,254 @@ export default function Home() {
     });
   }, []);
   return (
-    <main>
-      {/* home section */}
-      <section id='homeSection' className="h-screen w-full flex items-center justify-center">
-        <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] z-0"></div>
+      <main>
+        {/* home section */}
+        <section id='homeSection' className="h-screen w-full flex items-center justify-center">
+          <div>Hero Video Animation</div>
+        </section>
 
-        <div className="relative w-full h-full mx-auto">
-          <div className="overflow-hidden relative w-full h-full grid grid-cols-1 md:grid-cols-2">
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className={`absolute top-0 left-0 right-0 w-full h-full transition-transform duration-500 flex ${index === currentIndex ? 'translate-x-0' : 'translate-x-full'
-                  }`}
-                style={{ transform: `translateX(${(index - currentIndex) * 100}%)` }}
-              >
-                <div className="flex flex-col items-start justify-center p-4 md:pl-[10rem] w-full md:w-1/2 h-full">
-                  <h2 className="text-left" dangerouslySetInnerHTML={{ __html: image.text }} />
-                  <p className="text-left" dangerouslySetInnerHTML={{ __html: image.subtext }} />
-                  <Button href="#serviceSection" variant="alternative" className="mt-4  md:mt-8">
-                    Learn More
-                  </Button>
-                </div>
-                <div className="hidden md:flex items-center justify-center w-full md:w-1/2 h-full pr-[2rem] md:pr-[10rem]">
-                  <Image src={image.src} alt={image.alt} className="w-[40] h-[40] md:w-30 md:h-30 p-5" />
-                </div>
-              </div>
-            ))}
-          </div>
+        <br></br>
+        {/* Innovations section */}
+        <section 
+    id='InnovationsSection' 
+    className="w-full bg-black items-center justify-center py-16 px-6 md:py-20 md:px-12 space-y-8"
+    data-aos="fade-up"
+  >
+    
 
-          <button type="button" className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev onClick={prevSlide}>
-            <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30">
-              <svg className="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
-              </svg>
-              <span className="sr-only">Previous</span>
-            </span>
-          </button>
-          <button type="button" className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next onClick={nextSlide}>
-            <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30">
-              <svg className="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-              </svg>
-              <span className="sr-only">Next</span>
-            </span>
-          </button>
-        </div>
-      </section>
+    {/* Header section */}
+    <div className="relative max-w-7xl mx-auto text-center">
+      <h2 className="flex items-center justify-center text-xl md:text-2xl mb-4">
+        <span className="w-8 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 mr-3"></span>
+        <span className='text-cyan-300 pr-1 font-medium tracking-wider'>FEATURED</span>
+        <span className='text-white'>PRODUCTS</span>
+      </h2>
+      
+      <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 mb-4">
+        Products
+      </h1>
+      
+      <p className='text-lg md:text-xl text-blue-200 max-w-3xl mx-auto'>
+        Explore our exclusive selection of cutting-edge solutions tailored to meet your needs
+      </p>
+    </div>
 
-      <br></br>
-      {/* Innovations section */}
-      <section id='InnovationsSection' className="w-full bg-gray-100 items-center justify-center p-[50px] space-y-5" data-aos="fade-up">
-        <h2 className="at-border-head flex items-center text-xl md:text-2xl">
-          <span className="at-border relative mr-2.5 inline-block"></span>
-          <span className='text-[#0A1A2F] pr-1'>FEATURED</span> PROUDUCTS
-        </h2>
-        <h1 className="text-2xl md:text-6xl pb-3 pt-1 font-bold items-center">Products</h1>
-        <p className='mb-2 text-sm md:text-base text-[#666766]'>
-          Explore our exclusive selection of products tailored to meet your needs
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <Card
-            imageSrc={Hardware.src}
-            title="XION LORA CORE"
-            description="Discover our premium hardware solutions designed to enhance your productivity."
-            link="/projects/hardware/project01"
-          />
-          <Card
-            imageSrc={software.src}
-            title="IMSP"
-            description="Explore our software solutions that are tailored to meet your specific needs."
-            link="/projects/software/project01"
-          />
-        </div>
-      </section>
+    {/* Products grid */}
+    <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      <Card
+        imageSrc={Hardware.src}
+        title="XION LORA CORE"
+        description="Discover our premium hardware solutions designed to enhance your productivity."
+        link="/projects/hardware/project01"
+        glowColor="from-cyan-500 to-blue-600"
+      />
+      <Card
+        imageSrc={software.src}
+        title="IMSP"
+        description="Explore our software solutions that are tailored to meet your specific needs."
+        link="/projects/software/project01"
+        glowColor="from-purple-500 to-indigo-600"
+      />
+    </div>
+  </section>
 
-      <br></br>
+
       {/* Services section */}
-      <section id='projectSection' className="w-full items-center justify-center p-[50px] space-y-5 delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:opacity-0" data-taos-offset="300">
-        <h2 className="at-border-head flex items-center text-xl md:text-2xl">
-          <span className="at-border relative mr-2.5 inline-block"></span>
-          <span className='text-[#0A1A2F] pr-1'>FEATURED  </span>SERVICES
-        </h2>
-        <h1 className="text-4xl md:text-6xl pb-3 pt-3 font-bold items-center">Idea into Products</h1>
-        <p className='mb-5 text-sm md:text-base text-[#666766]'>
-          Our services provide a comprehensive pathway for turning an innovative idea into a real-world, manufacturable product, covering every aspect from conceptualization to market entry.
-        </p>
+<section 
+  id='projectSection' 
+  className="w-full bg-black items-center justify-center py-16 px-6 md:py-20 md:px-12 space-y-8 delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:opacity-0"
+  data-taos-offset="300"
+>
+  {/* Decorative background elements */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-800 rounded-full filter blur-3xl opacity-20"></div>
+    <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-indigo-800 rounded-full filter blur-3xl opacity-20"></div>
+  </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {newServices.map((newservice, index) => (
-            <NewServiceCard
-              key={index}
-              number={newservice.number}
-              title={newservice.title}
-              link={newservice.link}
-              icon={newservice.icon} />
-          ))}
-        </div>
-      </section>
+  {/* Header section */}
+  <div className="relative max-w-7xl mx-auto text-center">
+    <h2 className="flex items-center justify-center text-xl md:text-2xl mb-4">
+      <span className="w-8 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 mr-3"></span>
+      <span className='text-cyan-300 pr-1 font-medium tracking-wider'>FEATURED</span>
+      <span className='text-white'>SERVICES</span>
+    </h2>
+    
+    <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 mb-4">
+      Idea into Products
+    </h1>
+    
+    <p className='text-lg md:text-xl text-blue-200 max-w-3xl mx-auto'>
+      Our services provide a comprehensive pathway for turning an innovative idea into a real-world, manufacturable product, covering every aspect from conceptualization to market entry.
+    </p>
+  </div>
 
-      {/* Community section */}
-      <section id='communitySection' className="h-screen w-full flex items-center justify-center">
-        <div className="relative w-full h-full mx-auto">
-          <div className="grid grid-cols-1 gap-2 m-3">
-            <div>
-              <h4 className='text-xl mb-2 '>Free Guide Book on Converting Ideas into Products</h4>
-              <p className='text-base text-[#666766] '>We provide a free, comprehensive guide for customers, which walks them through the entire process of turning an idea into a real product. The document covers key stages, from initial concept development to prototyping, manufacturing, and even filing for patents. It serves as an educational tool, helping customers understand the journey ahead and the steps required to bring their vision to life</p>
-              <div className="flex items-center mt-4">
-                <div className="relative w-16 h-16">
-                  <div className="absolute inset-0  rounded-md flex items-center justify-center">
-                    <img src={pdfimage.src} className="w-[50px] h-[60px] md:w-[5500px] md:h-[70px]" />
-                    <br></br>
-                   </div>
-                </div>
-                <a href="./ORAGAN Innovation Playbook_ Turning Your Idea into a Market-Ready Product"
-                  target="_blank"
-                  className="ml-4 bg-[#0A1A2F] text-white text-sm font-medium py-2 px-4 rounded-md hover:bg-[#142a47]">
-                  Download
-                </a>
-              </div>
+  {/* Services grid */}
+  <div className="relative max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
+    {newServices.map((newservice, index) => (
+      <NewServiceCard
+        key={index}
+        number={newservice.number}
+        title={newservice.title}
+        link={newservice.link}
+        icon={newservice.icon}
+        className="group hover:scale-[1.03] transition-transform duration-300"
+        glowColor={index % 3 === 0 ? "from-cyan-500 to-blue-600" : 
+                   index % 3 === 1 ? "from-purple-500 to-indigo-600" : 
+                   "from-blue-500 to-cyan-500"}
+      />
+    ))}
+  </div>
+</section>
+
+      {/* Community section - Ultra Modern Design */}
+  <section 
+    id='communitySection' 
+    className="min-h-screen w-full flex items-center justify-center bg-black py-20 px-6 md:px-12 relative overflow-hidden"
+  >
+  <div className="relative max-w-4xl w-full mx-auto space-y-16 z-10">
+    {/* Section Header */}
+    <div className="text-center">
+      <h2 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 mb-6">
+        Innovation Resources
+      </h2>
+      <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+        Fuel your creative journey with our premium tools and expert guidance
+      </p>
+    </div>
+
+    {/* Interactive Card Stack */}
+    <div className="relative">
+      {/* Guide Card - 3D Tilt Effect */}
+      <div 
+        className="group relative bg-gray-800/70 backdrop-blur-lg rounded-3xl p-8 border border-gray-700/50 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2"
+        data-tilt
+        data-tilt-max="8"
+        data-tilt-speed="400"
+      >
+        <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="relative">
+            <div className="w-32 h-32 bg-gradient-to-br from-cyan-900 to-blue-900 rounded-2xl flex items-center justify-center border border-cyan-800/50 shadow-inner">
+              <img 
+                src={pdfimage.src} 
+                className="w-16 h-20 object-contain drop-shadow-lg" 
+                alt="PDF Guide" 
+              />
             </div>
-
-            <div>
-              <h4 className='text-xl mb-2'>Free Idea Review for Customers</h4>
-              <p className='text-base text-[#666766] '>ORAGAN offers a free consultation to review and assess customer ideas. During this session, our team of experts will provide valuable feedback on the feasibility, market potential, and next steps for converting the idea into a tangible product. This service is designed to give innovators the confidence to move forward with their projects, knowing that they have expert support right from the start.</p>
-              <br></br>
-
-              <form className="max-w-sm mx-auto">
-                <div className="mb-5">
-                  <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 ">Your Name</label>
-                  <input type="text" id="name" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="" required />
-                </div>
-                <div className="mb-5">
-                  <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your Email</label>
-                  <input type="email" id="email" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
-                </div>
-                <div className="mb-5">
-                  <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900">Your Idea</label>
-                  <textarea id="message" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "></textarea>
-                </div>
-                <button type="submit" className="text-white bg-[#0A1A2F]  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Submit</button>
-              </form>
-
+            <div className="absolute -bottom-3 -right-3 px-3 py-1 bg-cyan-600 rounded-full text-xs font-bold text-white shadow-lg">
+              FREE
+            </div>
+          </div>
+          
+          <div className="flex-1">
+            <h3 className="text-2xl font-bold text-white mb-3">Innovation Playbook</h3>
+            <p className="text-blue-200 mb-6">
+              Master the complete journey from concept to market with our comprehensive guide covering prototyping, manufacturing, and intellectual property protection.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a 
+                href="./ORAGAN Innovation Playbook_ Turning Your Idea into a Market-Ready Product"
+                target="_blank"
+                className="px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-medium rounded-lg hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-cyan-500/30 flex items-center gap-2"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+                Download Guide
+              </a>
+              <button className="px-6 py-3 bg-gray-700/50 border border-gray-600 text-white font-medium rounded-lg hover:bg-gray-700 transition-all duration-300 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+                </svg>
+                Preview
+              </button>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Idea Review Form - Futuristic Panel */}
+      <div className="mt-16 relative">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl blur opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="relative bg-gray-900/80 backdrop-blur-lg rounded-3xl p-8 border border-gray-700/50 overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-purple-600/10 rounded-full filter blur-3xl"></div>
+          
+          <h3 className="text-2xl font-bold text-white mb-2">Get Expert Feedback</h3>
+          <p className="text-blue-200 mb-8 max-w-lg">
+            Submit your idea for a free professional review. Our innovation experts will provide actionable insights within 48 hours.
+          </p>
+          
+          <form className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium text-blue-200 mb-2">Your Name</label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <input 
+                    type="text" 
+                    className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                    placeholder="Enter your name"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-blue-200 mb-2">Your Email</label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                  </div>
+                  <input 
+                    type="email" 
+                    className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                    placeholder="Enter your email"
+                  />
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <label className="block text-sm font-medium text-blue-200 mb-2">Describe Your Idea</label>
+              <div className="relative">
+                <div className="absolute top-3 left-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <textarea 
+                  rows={4} 
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                  placeholder="Describe your innovative idea in detail..."
+                ></textarea>
+              </div>
+            </div>
+            
+            <button 
+              type="submit" 
+              className="w-full md:w-auto px-8 py-3.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-lg hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-purple-500/30 flex items-center justify-center gap-2 group"
+            >
+              <span>Submit for Review</span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* about section */}
-      <section id='aboutusSection' className="h-screen w-full flex items-center justify-center">
+      <section id='aboutusSection' className="h-screen w-full flex items-center justify-center bg-black">
         <div className="relative w-full h-full mx-auto">
           <div className="relative w-full h-full grid grid-cols-1 md:grid-cols-2">
             <div className='flex items-center justify-center'>
@@ -330,12 +430,12 @@ export default function Home() {
             </div>
             <div className="flex flex-col justify-center p-4 md:p-0">
               <div>
-                <h2 className="at-border-head flex items-center text-xl md:text-2xl">
+                <h2 className="at-border-head flex items-center text-xl md:text-2xl text-white">
                   <span className="at-border relative mr-2.5 inline-block"></span>
-                  <span className='text-[#0A1A2F] pr-1'>WHO</span> WE ARE
+                  <span className='text-white pr-1'>WHO</span> WE ARE
                 </h2>
-                <h1 className="text-3xl md:text-6xl pb-3 pt-3 font-bold items-center">
-                  Founding <span className='text-[#0A1A2F] pr-1'>Inspiration</span>
+                <h1 className="text-3xl md:text-6xl pb-3 pt-3 font-bold items-center text-white">
+                  Founding <span className='text-white pr-1'>Inspiration</span>
                 </h1>
                 <p className='mb-5 text-sm md:text-lg text-[#666766]'>
                   Established in 2019, our company aims to revolutionize the technology industry by
