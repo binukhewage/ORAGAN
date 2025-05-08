@@ -1,51 +1,54 @@
-import React from 'react'
+// Products.tsx
+import React from 'react';
 import Card from '../components/ProductCard';
-import software from '../assets/software.png'
-import Hardware from '../assets/hardware.png'
+import software from '../assets/software.png';
+import hardware from '../assets/hardware.png';
 
 const Products = () => {
   return (
-    <div className="min-h-screen pt-24 bg-black">
-      <div className="container mx-auto px-6">
-        {/* Animated header */}
-        <div className="mb-16 text-center">
-          <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-white">
-            Our Products
+    <div className="min-h-screen pt-32 bg-neutral-950">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Modern header with gradient text */}
+        <div className="mb-20 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold bg-white bg-clip-text text-transparent mb-4">
+             Products
           </h1>
-          <p className="text-xl text-blue-200 max-w-2xl mx-auto">
-            Cutting-edge solutions designed for tomorrow's challenges
+          <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+            Next-generation solutions engineered for digital transformation
           </p>
         </div>
 
-        {/* Product cards grid with hover effects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+        {/* Enhanced product grid with subtle animations */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <Card
-            imageSrc={Hardware.src}
+            imageSrc={hardware.src}
             title="XION LORA CORE"
-            description="Discover our premium hardware solutions designed to enhance your productivity."
+            description="Advanced hardware platform with cutting-edge connectivity and edge computing capabilities."
             link="/projects/hardware/project01"
-            className="hover:scale-105 transition-transform duration-500"
-            glowColor="from-cyan-500 to-blue-600"
+            className="hover:-translate-y-2 transition-transform duration-300"
+            gradient="from-cyan-500/20 to-blue-600/20"
+            borderColor="border-cyan-500/30"
           />
           <Card
             imageSrc={software.src}
             title="IMSP"
-            description="Explore our software solutions that are tailored to meet your specific needs."
+            description="Intelligent management software platform with AI-driven analytics and automation."
             link="/projects/software/project01"
-            className="hover:scale-105 transition-transform duration-500"
-            glowColor="from-purple-500 to-indigo-600"
+            className="hover:-translate-y-2 transition-transform duration-300"
+            gradient="from-purple-500/20 to-indigo-600/20"
+            borderColor="border-purple-500/30"
           />
         </div>
 
-        {/* Futuristic decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-20 right-20 w-64 h-64 bg-blue-800 rounded-full filter blur-3xl opacity-20"></div>
-          <div className="absolute bottom-10 left-10 w-80 h-80 bg-indigo-800 rounded-full filter blur-3xl opacity-20"></div>
-          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-cyan-800 rounded-full filter blur-3xl opacity-10"></div>
+        {/* Subtle background elements */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-indigo-500/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute top-1/3 left-1/2 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl"></div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

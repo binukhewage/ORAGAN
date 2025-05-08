@@ -11,16 +11,16 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-2 left-1/2 -translate-x-1/2 w-[95%] bg-gray-400 backdrop-blur-sm z-50 border-b border-gray-800/50 py-2 rounded-[50px] shadow-lg">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-12"> {/* Reduced height */}
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl bg-neutral-900/80 backdrop-blur-lg z-50 border border-neutral-700/50 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300">
+      <div className="mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
           
           {/* Logo - Left */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0 flex items-center">
             <img 
               src={logo.src} 
               alt="ORAGAN Logo" 
-              className="h-8 w-auto"  // Smaller logo
+              className="h-8 w-auto transition-transform hover:scale-105" 
             />
           </Link>
 
@@ -28,7 +28,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMobileMenu}
-              className="text-gray-300 hover:text-white focus:outline-none"
+              className="text-neutral-300 hover:text-white focus:outline-none p-2 rounded-full hover:bg-neutral-800/50 transition-all"
               aria-label="Toggle menu"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,7 +43,7 @@ export default function Navbar() {
 
           {/* Navigation Links - Center */}
           <nav className="hidden md:flex items-center justify-center flex-1">
-            <ul className="flex space-x-6">  {/* Reduced spacing */}
+            <ul className="flex space-x-2">
               {[
                 { href: "/", label: "Home" },
                 { href: "/Products", label: "Products" },
@@ -55,7 +55,7 @@ export default function Navbar() {
                 <li key={item.href}>
                   <Link 
                     href={item.href} 
-                    className="text-gray-300 hover:text-white px-2 py-1 text-xs font-medium uppercase tracking-wider transition-colors duration-200"
+                    className="text-neutral-300 hover:text-white px-4 py-2 text-sm font-medium rounded-full hover:bg-neutral-800/50 transition-all duration-200"
                   >
                     {item.label}
                   </Link>
@@ -68,7 +68,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Link 
               href="/contact" 
-              className="ml-4 whitespace-nowrap inline-flex items-center justify-center px-3 py-1.5 rounded text-xs font-medium uppercase tracking-wider text-white bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-sm"
+              className="ml-4 whitespace-nowrap inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20"
             >
               Reach Us
             </Link>
@@ -76,10 +76,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu - appears below the thin navbar */}
+      {/* Mobile menu - appears below the navbar */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-gray-900/95 backdrop-blur-lg border-t border-gray-800/50">
-          <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className="md:hidden bg-neutral-900/95 backdrop-blur-xl border-t border-neutral-700/50 mt-2 rounded-2xl overflow-hidden">
+          <div className="px-4 pt-2 pb-4 space-y-2">
             {[
               { href: "/", label: "Home" },
               { href: "/Products", label: "Products" },
@@ -92,10 +92,11 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`block px-3 py-2 text-sm font-medium ${
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block px-4 py-3 text-sm font-medium rounded-lg transition-all ${
                   item.isCTA 
-                    ? 'text-white bg-orange-600 rounded-md text-center mt-2'
-                    : 'text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md'
+                    ? 'text-white bg-gradient-to-r from-cyan-500 to-blue-600 text-center'
+                    : 'text-neutral-300 hover:text-white hover:bg-neutral-800/50'
                 }`}
               >
                 {item.label}
