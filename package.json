@@ -16,6 +16,7 @@
     "aos": "^2.3.4",
     "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.10.3",
     "motion": "^12.9.7",
     "next": "14.2.4",
     "next-video": "^1.1.1",

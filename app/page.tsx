@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import aboutpageImg from './assets/aboutpageImg.png';
+import aboutpageImg from './assets/aboutimg1.png';
 import software from './assets/software.png';
 import Hardware from './assets/hardware.png';
 import './assets/css/style.css';
@@ -135,7 +135,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="relative max-w-7xl mx-auto text-center"
         >
-          <h2 className="flex items-center justify-center text-xl md:text-2xl mb-4">
+          <h2 className="flex items-center justify-center text-xl md:text-xl mb-4">
             <span className="w-8 h-0.5 bg-gradient-to-r from-white to-gray-300 mr-3"></span>
             <span className='text-gray-300 pr-1 font-medium tracking-wider'>FEATURED</span>
             <span className='text-white'>INNOVATIONS</span>
@@ -146,9 +146,9 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight"
+            className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight"
           >
-            Cutting-Edge <span className="text-white">Solutions</span>
+            Our <span className="text-white">Products</span>
           </motion.h1>
           
           <motion.p 
@@ -156,7 +156,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className='text-lg md:text-xl text-gray-400 max-w-3xl mx-auto'
+            className='text-lg md:text-lg text-gray-400 max-w-3xl mx-auto'
           >
             Discover our exclusive selection of next-generation products engineered to revolutionize your industry
           </motion.p>
@@ -197,7 +197,7 @@ export default function Home() {
       {/* Services section */}
       <section 
         id='projectSection' 
-        className="w-full relative items-center justify-center py-16 px-6 md:py-24 md:px-12 space-y-8 z-10"
+        className="w-full relative items-center justify-center py-16 px-6 md:py-16 md:px-12 space-y-8 z-10"
       >
         <Spotlight className="-top-1/3" />
         
@@ -208,7 +208,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="relative max-w-7xl mx-auto text-center"
         >
-          <h2 className="flex items-center justify-center text-xl md:text-2xl mb-4">
+          <h2 className="flex items-center justify-center text-xl md:text-xl mb-4">
             <span className="w-8 h-0.5 bg-gradient-to-r from-gray-300 to-white mr-3"></span>
             <span className='text-gray-300 pr-1 font-medium tracking-wider'>END-TO-END</span>
             <span className='text-white'>SERVICES</span>
@@ -219,7 +219,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight"
+            className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight"
           >
             From <span className="text-white">Concept</span> to Market
           </motion.h1>
@@ -300,24 +300,29 @@ export default function Home() {
               className="flex flex-col justify-center p-4 md:p-0"
             >
               <div className="relative">
-                <h2 className="flex items-center text-xl md:text-2xl text-white mb-4">
+                <h2 className="flex items-center text-xl md:text-xl text-white mb-4">
                   <span className="w-8 h-0.5 bg-gradient-to-r from-gray-300 to-white mr-3"></span>
                   <span className='text-white'>OUR STORY</span>
                 </h2>
                 
                 <motion.h1 
-                  className="text-3xl md:text-6xl pb-3 pt-3 font-bold items-center bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 leading-tight"
+                  className="text-3xl md:text-5xl pb-12 pt-3 font-bold items-center bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 leading-tight"
                 >
-                  Pioneering <span className="text-white">Innovation</span>
+                  About <span className="text-white">ORAGAN</span>
                 </motion.h1>
                 
-                <motion.p 
-                  className='mb-5 text-sm md:text-lg text-gray-400'
-                >
-                  Founded in 2019, we're on a mission to disrupt the technology landscape with groundbreaking, 
-                  user-centric solutions. Our team of visionaries and engineers believe in technology's transformative 
-                  power to reshape industries and elevate human potential.
-                </motion.p>
+                <div className="space-y-6 text-gray-300 mb-8 max-w-[550px]">
+                  <motion.p className="text-lg">
+                    Founded in 2019, ORAGAN transforms visionary concepts into market-ready products through our complete innovation ecosystem.
+                  </motion.p>
+                  <motion.p className="text-lg">
+                    We combine engineering precision with strategic insight to help startups and businesses navigate from ideation to successful launch.
+                  </motion.p>
+                  <motion.p className="text-lg">
+                    Our full-stack support includes R&D, product design, prototyping, manufacturing, and go-to-market strategy - ensuring seamless execution at every stage.
+                  </motion.p>
+                </div>
+
                 
                 <motion.div 
                   className="mt-8"
@@ -328,9 +333,9 @@ export default function Home() {
                   >
                     <button 
                       href="/aboutus" 
-                      className="bg-white text-black hover:bg-gray-200 p-2 rounded-[50px]"
+                      className="bg-white text-black hover:bg-gray-200 shadow-md p-3 rounded-[50px]"
                     >
-                      Explore Our Journey
+                      Learn More 
                     </button>
                   </motion.div>
                 </motion.div>
@@ -365,7 +370,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="flex items-center justify-center text-xl md:text-2xl mb-4">
+            <h2 className="flex items-center justify-center text-xl md:text-xl mb-4">
               <span className="w-8 h-0.5 bg-gradient-to-r from-gray-300 to-white mr-3"></span>
               <span className='text-gray-300 pr-1 font-medium tracking-wider'>INNOVATION</span>
               <span className='text-white'>RESOURCES</span>
@@ -376,7 +381,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight"
+              className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight"
             >
               Fuel Your <span className="text-white">Innovation</span>
             </motion.h1>
@@ -386,7 +391,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              className='text-lg md:text-xl text-gray-400 max-w-3xl mx-auto'
+              className='text-lg md:text-lg text-gray-400 max-w-3xl mx-auto'
             >
               Accelerate your journey with our premium tools and expert guidance
             </motion.p>
