@@ -118,7 +118,7 @@ export default function Home() {
   return (
     <main className="relative bg-black overflow-hidden">
       {/* Hero section */}
-      <div className='pt-[100px] relative z-10'>
+      <div className='relative z-10'>
         <Hero />
       </div>
 
@@ -197,13 +197,13 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="flex flex-col sm:flex-row justify-center gap-4"
+        className="flex flex-col sm:flex-row justify-center items-center gap-4 px-4"
       >
         <motion.a
           whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
           whileTap={{ scale: 0.95 }}
           href="/Products"
-          className="px-8 py-3.5 bg-transparent border border-white/30 text-white font-medium rounded-lg hover:bg-white/5 transition-all duration-300 inline-flex items-center gap-2"
+          className="w-full sm:w-auto text-center px-6 py-3 sm:px-8 sm:py-3.5 bg-transparent border border-white/30 text-white text-base sm:text-lg font-medium rounded-lg hover:bg-white/5 transition-all duration-300 inline-flex items-center justify-center gap-2"
         >
           Explore Products
           {/* Animated Arrow */}

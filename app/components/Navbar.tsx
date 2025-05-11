@@ -84,7 +84,7 @@ export default function Navbar() {
               { href: "/", label: "Home" },
               { href: "/Products", label: "Products" },
               { href: "/newProducts", label: "Idea to Product" },
-              { href: "https://sltmobitelecms.vercel.app", label: "ORAGAN IOT Core" },
+              { href: "https://oragan-dashboard.vercel.app", label: "ORAGAN IOT Core" },
               { href: "/community", label: "Community" },
               { href: "/aboutus", label: "About" },
               { href: "/reachus", label: "Reach Us", isCTA: true },
