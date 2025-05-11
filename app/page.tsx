@@ -251,14 +251,14 @@ export default function Home() {
               <NewServiceCard
                 number={newservice.number}
                 title={newservice.title}
-                description={newservice.description}
+                description={newservice.description} // Optional
                 link={newservice.link}
                 icon={newservice.icon}
-                className="h-full group hover:shadow-xl transition-all duration-300"
-                glowColor="from-white/10 to-white/20"
-                borderColor="border-gray-700/50"
-                textColor="text-white"
-                bgColor="bg-gray-900/50"
+                className="your-additional-classes"
+                glowColor="from-white/10 to-white/20" // Accepted but not used
+                borderColor="border-gray-700/50" // Accepted but not used
+                textColor="text-white" // Accepted but not used
+                bgColor="bg-gray-900/50" // Accepted but not used
               />
             </motion.div>
           ))}
