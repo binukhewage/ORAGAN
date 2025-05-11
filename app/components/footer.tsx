@@ -156,10 +156,10 @@ export default function Footer() {
                                         clipRule="evenodd" />
                                 </svg>
                                 <a 
-                                    href="tel:+94711186006" 
+                                    href="tel:+94 71 118 6006" 
                                     className="text-gray-400 hover:text-white transition-colors duration-300"
                                 >
-                                    +94 711186006
+                                    +94 71 118 6006
                                 </a>
                             </div>
                         </address>
@@ -168,19 +168,19 @@ export default function Footer() {
                     {/* Newsletter or additional content can go here */}
                     <div>
                         <h3 className="text-lg font-semibold text-white mb-4 tracking-wider">
-                            INNOVATION UPDATES
+                            SEND US YOUR IDEAS
                         </h3>
                         <p className="text-gray-400 mb-4">
-                            Subscribe to our newsletter for the latest in tech innovation.
+                            Let's connect and make your dream a reality
                         </p>
                         <div className="flex">
                             <input 
                                 type="email" 
-                                placeholder="Your email" 
+                                placeholder="Your Email" 
                                 className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:ring-1 focus:ring-white text-white w-full"
                             />
                             <button className="bg-white text-black px-4 py-2 rounded-r-lg hover:bg-gray-200 transition-colors duration-300">
-                                Subscribe
+                                SEND
                             </button>
                         </div>
                     </div>

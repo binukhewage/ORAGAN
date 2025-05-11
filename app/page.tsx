@@ -174,7 +174,7 @@ export default function Home() {
             title="XION LORA CORE"
             description="Advanced hardware platform with ultra-low power consumption and long-range connectivity"
             link="/projects/hardware/project01"
-            glowColor="from-gray-300/20 to-white/20"
+            glowColor="from-gray-300/20 to-white/20"  // This will work now
             borderColor="border-gray-300/30"
             badgeText="HARDWARE"
             badgeColor="bg-gray-300 text-black"
@@ -184,7 +184,7 @@ export default function Home() {
             title="IMSP"
             description="Intelligent management system with predictive analytics and real-time monitoring"
             link="/projects/software/project01"
-            glowColor="from-gray-400/20 to-white/20"
+            glowColor="from-gray-400/20 to-white/20"  // This will work now
             borderColor="border-gray-400/30"
             badgeText="SOFTWARE"
             badgeColor="bg-gray-400 text-black"

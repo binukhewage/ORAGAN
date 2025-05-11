@@ -71,14 +71,6 @@ const Hero = () => {
           className="flex flex-col sm:flex-row justify-center gap-4"
         >
           <motion.a
-            whileHover={{ scale: 1.05, boxShadow: "0 0 20px -5px rgba(255,255,255,0.3)" }}
-            whileTap={{ scale: 0.95 }}
-            href="#services"
-            className="px-8 py-3.5 bg-white text-black font-medium rounded-lg hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-white/30"
-          >
-            Our Process
-          </motion.a>
-          <motion.a
             whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
             whileTap={{ scale: 0.95 }}
             href="#contact"

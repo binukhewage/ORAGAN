@@ -1,4 +1,3 @@
-// ProductCard.tsx
 import React from 'react';
 import Link from 'next/link';
 
@@ -8,8 +7,11 @@ interface CardProps {
   description: string;
   link: string;
   className?: string;
-  gradient?: string;
+  glowColor?: string;  // New prop
+  gradient?: string;   // Existing prop (fallback)
   borderColor?: string;
+  badgeText?: string;
+  badgeColor?: string;
 }
 
 const Card: React.FC<CardProps> = ({ 
@@ -18,15 +20,28 @@ const Card: React.FC<CardProps> = ({
   description, 
   link, 
   className = '', 
-  gradient = 'from-blue-500/20 to-cyan-500/20',
-  borderColor = 'border-blue-500/30'
+  glowColor,          // New prop
+  gradient = 'from-blue-500/20 to-cyan-500/20', // Fallback
+  borderColor = 'border-blue-500/30',
+  badgeText,
+  badgeColor = 'bg-gray-300 text-black'
 }) => {
+  // Use glowColor if provided, otherwise use gradient
+  const gradientClass = glowColor || gradient;
+
   return (
     <div className={`relative group ${className}`}>
       {/* Main card container */}
       <div className={`relative h-full bg-neutral-900/50 backdrop-blur-sm rounded-xl overflow-hidden border ${borderColor} transition-all duration-500 group-hover:border-opacity-100`}>
-        {/* Gradient overlay */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+        {/* Gradient overlay - now uses gradientClass */}
+        <div className={`absolute inset-0 bg-gradient-to-br ${gradientClass} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+        
+        {/* Badge */}
+        {badgeText && (
+          <div className={`absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full z-10 ${badgeColor}`}>
+            {badgeText}
+          </div>
+        )}
         
         {/* Image container */}
         <div className="relative aspect-video overflow-hidden">
