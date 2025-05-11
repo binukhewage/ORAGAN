@@ -331,12 +331,12 @@ export default function Home() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <button 
+                    <Link 
                       href="/aboutus" 
                       className="bg-white text-black hover:bg-gray-200 shadow-md p-3 rounded-[50px]"
                     >
                       Learn More 
-                    </button>
+                    </Link>
                   </motion.div>
                 </motion.div>
               </div>
