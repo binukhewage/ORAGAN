@@ -4,6 +4,12 @@ import { motion } from 'framer-motion';
 import Card from '../components/ProductCard';
 import software from '../assets/software.png';
 import hardware from '../assets/hardware.png';
+import hardware1 from '../assets/hardware1.png';
+import hardware2 from '../assets/hardware2.png';
+import hardware3 from '../assets/hardware3.png';
+import hardware4 from '../assets/hardware4.png';
+import hardware5 from '../assets/hardware5.png';
+import hardware6 from '../assets/hardware6.png';
 
 const Products = () => {
   // Animation variants
@@ -84,6 +90,89 @@ const Products = () => {
               glowColor="from-gray-400/20 to-white/20"
               borderColor="border-gray-400/30"
               badgeText="SOFTWARE"
+              badgeColor="bg-gray-400 text-black"
+            />
+          </motion.div>
+
+          <motion.div variants={item}>
+            <Card
+              imageSrc={hardware1.src}
+              title="Environment Condition Monitoring System"
+              description="A smart IoT device that monitors air quality, temperature, and humidity with real-time visualization and automatic AC control."
+              link="/projects/hardware/project02"
+              className="hover:-translate-y-2 transition-transform duration-300"
+              glowColor="from-gray-400/20 to-white/20"
+              borderColor="border-gray-400/30"
+              badgeText="HARDWARE"
+              badgeColor="bg-gray-400 text-black"
+            />
+          </motion.div>
+
+          <motion.div variants={item}>
+            <Card
+              imageSrc={hardware2.src}
+              title="Thermo Link"
+              description="An industrial-grade IoT temperature sensor with Wi-Fi and waterproof capabilities for accurate real-time monitoring."
+              link="/projects/hardware/project03"
+              className="hover:-translate-y-2 transition-transform duration-300"
+              glowColor="from-gray-400/20 to-white/20"
+              borderColor="border-gray-400/30"
+              badgeText="HARDWARE"
+              badgeColor="bg-gray-400 text-black"
+            />
+          </motion.div>
+
+          <motion.div variants={item}>
+            <Card
+              imageSrc={hardware3.src}
+              title="Machine Uptime Monitoring Device"
+              description="An industrial IoT solution for monitoring machine uptime, vibration, and temperature to enhance reliability and reduce downtime."
+              link="/projects/hardware/project04"
+              className="hover:-translate-y-2 transition-transform duration-300"
+              glowColor="from-gray-400/20 to-white/20"
+              borderColor="border-gray-400/30"
+              badgeText="HARDWARE"
+              badgeColor="bg-gray-400 text-black"
+            />
+          </motion.div>
+          <motion.div variants={item}>
+            <Card
+              imageSrc={hardware4.src}
+              title="XION IoT Core Development Board"
+              description="A versatile IoT dev board with LoRa, SD card logging, USB-C, and multiple I/O options for embedded system projects."
+              link="/projects/hardware/project05"
+              className="hover:-translate-y-2 transition-transform duration-300"
+              glowColor="from-gray-400/20 to-white/20"
+              borderColor="border-gray-400/30"
+              badgeText="HARDWARE"
+              badgeColor="bg-gray-400 text-black"
+            />
+          </motion.div>
+
+          <motion.div variants={item}>
+            <Card
+              imageSrc={hardware5.src}
+              title="XION-01 Development Board"
+              description=" A compact ESP32-based board with Wi-Fi, Bluetooth, GSM, and SD card support for mobile and remote IoT solutions."
+              link="/projects/hardware/project06"
+              className="hover:-translate-y-2 transition-transform duration-300"
+              glowColor="from-gray-400/20 to-white/20"
+              borderColor="border-gray-400/30"
+              badgeText="HARDWARE"
+              badgeColor="bg-gray-400 text-black"
+            />
+          </motion.div>
+
+          <motion.div variants={item}>
+            <Card
+              imageSrc={hardware6.src}
+              title="Smart Weight Data Logger"
+              description=" A smart scale logger with GPS and cloud integration for automated, real-time weight tracking across industries."
+              link="/projects/hardware/project07"
+              className="hover:-translate-y-2 transition-transform duration-300"
+              glowColor="from-gray-400/20 to-white/20"
+              borderColor="border-gray-400/30"
+              badgeText="HARDWARE"
               badgeColor="bg-gray-400 text-black"
             />
           </motion.div>

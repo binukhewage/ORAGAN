@@ -19,6 +19,7 @@ import NewServiceCard from './components/newServices';
 import Link from 'next/link';
 import pdfimage from './assets/pdfimage.png';
 import Hero from './components/Hero';
+import { ArrowRight } from "lucide-react";
 
 // Updated Spotlight component for dark theme
 const Spotlight = ({ className }: { className?: string }) => {
@@ -124,7 +125,7 @@ export default function Home() {
       {/* Products section */}
       <section 
         id='InnovationsSection' 
-        className="w-full relative items-center justify-center py-16 px-6 md:py-24 md:px-12 space-y-8 z-10"
+        className="w-full relative items-center justify-center py-16 px-6 md:py-20 md:px-12 space-y-8 z-10"
       >
         <Spotlight className="-top-1/4" />
         
@@ -191,6 +192,35 @@ export default function Home() {
           />
         </motion.div>
       </section>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="flex flex-col sm:flex-row justify-center gap-4"
+      >
+        <motion.a
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+          whileTap={{ scale: 0.95 }}
+          href="/Products"
+          className="px-8 py-3.5 bg-transparent border border-white/30 text-white font-medium rounded-lg hover:bg-white/5 transition-all duration-300 inline-flex items-center gap-2"
+        >
+          Explore Products
+          {/* Animated Arrow */}
+          <motion.svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="w-5 h-5"
+            animate={{ x: [0, 5, 0] }}
+            transition={{ duration: 1.2, repeat: Infinity }}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </motion.svg>
+        </motion.a>
+      </motion.div>
 
       <GlowingBorder />
 
@@ -333,7 +363,7 @@ export default function Home() {
                   >
                     <Link 
                       href="/aboutus" 
-                      className="bg-white text-black hover:bg-gray-200 shadow-md p-3 rounded-[50px]"
+                      className="bg-white text-black hover:bg-gray-200 shadow-md p-3 rounded-md"
                     >
                       Learn More 
                     </Link>
