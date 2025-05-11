@@ -48,42 +48,42 @@ export default function Home() {
       title: 'Proof of Concept (POC) Development',
       link: '/services/service01',
       icon: <FontAwesomeIcon icon={faVial} className="text-white text-3xl" />,
-      description: "Validate your idea's feasibility with our technical assessment"
+      description: "in this stage, we focus on demonstrating the technical feasibility of an idea. A basic conceptis developed and tested to ensure the idea isworkable in real-world conditions. The POC helpsidentify potential challenges early and ensuresthat further investment is worthwhile. Weprovide initial designs, component selection, and basic functionality testing to validate the idea."
     },
     {
       number: '02',
       title: 'Prototype Development',
       link: '/services/service02',
       icon: <FontAwesomeIcon icon={faDraftingCompass} className="text-white text-3xl" />,
-      description: "Transform concepts into tangible, functional prototypes"
+      description: "Once the POC is validated, we develop a working prototype to demonstrate the core features of the product. This includes refining designs, sourcing components, and assembling the product to a stage where it showcases its primary functionality. Prototyping allows for multiple rounds of testing and improvements, ensuring the product works as expected and meets the user’s needs before moving into mass production."
     },
     {
       number: '03',
       title: 'Design for Manufacturing (DFM)',
       link: '/services/service03',
       icon: <FontAwesomeIcon icon={faProjectDiagram} className="text-white text-3xl" />,
-      description: "Optimize designs for cost-effective mass production"
+      description: "After prototyping, the design is optimized for large-scale production. DFM involves refining the product to be efficiently manufactured, reducing costs, simplifying production processes, and ensuring consistent quality. This stage includes component standardization, material selection, and assembly procedures."
     },
     {
       number: '04',
       title: 'Full-scale Manufacturing',
       link: '/services/service04',
       icon: <FontAwesomeIcon icon={faIndustry} className="text-white text-3xl" />,
-      description: "End-to-end production with quality assurance"
+      description: "After the product design is finalized, we manage the full-scale manufacturing process. We handle everything from production planning, sourcing materials, and setting up manufacturing facilities to quality control. We ensure the product is produced efficiently and at the highest quality, whether for small batch production or large-scale mass manufacturing."
     },
     {
       number: '05',
       title: 'Marketing & Launch Support',
       link: '/services/service05',
       icon: <FontAwesomeIcon icon={faBullhorn} className="text-white text-3xl" />,
-      description: "Strategic go-to-market planning and execution"
+      description: "Once the product is ready, we assist in bringing it to market with strategic marketing solutions. This includes branding, product promotion, digital marketing campaigns, and creating marketing collateral such as brochures, demo videos, and website content. We help set up sales channels and gather customer feedback to refine both the product and marketing strategy, ensuring the product reaches the right audience effectively."
     },
     {
       number: '06',
       title: 'Patent Application Guidance',
       link: '/services/service06',
       icon: <FontAwesomeIcon icon={faBalanceScale} className="text-white text-3xl" />,
-      description: "Protect your intellectual property with expert guidance"
+      description: "We help innovators protect their intellectual property by guiding them through the patent application process. This includes conducting initial patent searches, advising on patentability, and supporting the documentation needed for patent submissions, ensuring that their innovation is legally protected."
     },
   ];
 
@@ -195,77 +195,77 @@ export default function Home() {
       <GlowingBorder />
 
       {/* Services section */}
-      <section 
-        id='projectSection' 
-        className="w-full relative items-center justify-center py-16 px-6 md:py-16 md:px-12 space-y-8 z-10"
+<section 
+  id='projectSection' 
+  className="w-full relative items-center justify-center py-16 px-6 md:py-16 md:px-12 space-y-8 z-10"
+>
+  <Spotlight className="-top-1/3" />
+  
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="relative max-w-7xl mx-auto text-center"
+  >
+    <h2 className="flex items-center justify-center text-xl md:text-xl mb-4">
+      <span className="w-8 h-0.5 bg-gradient-to-r from-gray-300 to-white mr-3"></span>
+      <span className='text-gray-300 pr-1 font-medium tracking-wider'>END-TO-END</span>
+      <span className='text-white'>SERVICES</span>
+    </h2>
+    
+    <motion.h1 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight"
+    >
+      Idea <span className="text-white">into</span> Product
+    </motion.h1>
+    
+    <motion.p 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.4 }}
+      viewport={{ once: true }}
+      className='text-lg md:text-xl text-gray-400 max-w-3xl mx-auto'
+    >
+      Our comprehensive service pipeline transforms your vision into a tangible, market-ready product
+    </motion.p>
+  </motion.div>
+
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.6 }}
+    viewport={{ once: true }}
+    className="relative max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
+  >
+    {newServices.map((newservice, index) => (
+      <motion.div
+        key={index}
+        whileHover={{ y: -10 }}
+        transition={{ type: "spring", stiffness: 300 }}
       >
-        <Spotlight className="-top-1/3" />
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative max-w-7xl mx-auto text-center"
-        >
-          <h2 className="flex items-center justify-center text-xl md:text-xl mb-4">
-            <span className="w-8 h-0.5 bg-gradient-to-r from-gray-300 to-white mr-3"></span>
-            <span className='text-gray-300 pr-1 font-medium tracking-wider'>END-TO-END</span>
-            <span className='text-white'>SERVICES</span>
-          </h2>
-          
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight"
-          >
-            From <span className="text-white">Concept</span> to Market
-          </motion.h1>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className='text-lg md:text-xl text-gray-400 max-w-3xl mx-auto'
-          >
-            Our comprehensive service pipeline transforms your vision into a tangible, market-ready product
-          </motion.p>
-        </motion.div>
+        <NewServiceCard
+          number={newservice.number}
+          title={newservice.title}
+          description={newservice.description}
+          link={newservice.link}
+          icon={newservice.icon}
+          className="hover:bg-gradient-to-br hover:from-primary/10 hover:to-secondary/10 transition-all duration-300"
+          glowColor="from-white/10 to-white/20"
+          borderColor="border-gray-700/50 hover:border-primary/30"
+          textColor="text-white"
+          bgColor="bg-gray-900/50 hover:bg-gray-800/50"
+        />
+      </motion.div>
+    ))}
+  </motion.div>
+</section>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="relative max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
-        >
-          {newServices.map((newservice, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ y: -10 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <NewServiceCard
-                number={newservice.number}
-                title={newservice.title}
-                description={newservice.description} // Optional
-                link={newservice.link}
-                icon={newservice.icon}
-                className="your-additional-classes"
-                glowColor="from-white/10 to-white/20" // Accepted but not used
-                borderColor="border-gray-700/50" // Accepted but not used
-                textColor="text-white" // Accepted but not used
-                bgColor="bg-gray-900/50" // Accepted but not used
-              />
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
-
-      <GlowingBorder />
+<GlowingBorder />
 
 
 

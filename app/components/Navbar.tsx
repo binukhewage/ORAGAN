@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo1.png";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -47,8 +47,8 @@ export default function Navbar() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/Products", label: "Products" },
-                { href: "/newProducts", label: "Idea to Product" },
-                { href: "https://sltmobitelecms.vercel.app", label: "IoT Core" },
+                { href: "/newProducts", label: "Idea into Product" },
+                { href: "https://oragan-dashboard.vercel.app", label: "IoT Core" },
                 { href: "/community", label: "Community" },
                 { href: "/aboutus", label: "About" },
               ].map((item) => (

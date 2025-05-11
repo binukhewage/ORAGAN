@@ -16,7 +16,7 @@ const Hero = () => {
           <source src="/idea-to-product.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/80"></div>
+        
       </div>
 
       {/* Content Overlay */}
@@ -73,7 +73,7 @@ const Hero = () => {
           <motion.a
             whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
             whileTap={{ scale: 0.95 }}
-            href="#contact"
+            href="/contact"
             className="px-8 py-3.5 bg-transparent border border-white/30 text-white font-medium rounded-lg hover:bg-white/5 transition-all duration-300"
           >
             Start Your Project

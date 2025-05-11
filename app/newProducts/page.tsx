@@ -12,7 +12,7 @@ const NewProducts = () => {
       title: 'Proof of Concept (POC) Development',
       link: '/services/service01',
       icon: <FontAwesomeIcon icon={faVial} className="text-white text-3xl" />,
-      description: "Validate your idea's feasibility with our technical assessment"
+      description: "In this stage, we focus on demonstrating the technical feasibility of an idea. A basic concept is developed and tested to ensure the idea is workable in real-world conditions. The POC helps identify potential challenges early and ensures that further investment is worthwhile. We provide initial designs, component selection, and basic functionality testing to validate the idea."
     },
     {
       number: '02',
@@ -60,7 +60,7 @@ const NewProducts = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative h-[50vh] w-full flex items-center justify-center">
+      <section className="relative h-[40vh] w-full flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/30 z-0"></div>
         <div className="relative z-10 w-full text-center px-6">
           <motion.div 
@@ -89,10 +89,8 @@ const NewProducts = () => {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {newServices.map((service, index) => (
-              <motion.div
+              <div
                 key={index}
-                whileHover={{ y: -10 }}
-                transition={{ type: "spring", stiffness: 300 }}
               >
                 <NewServiceCard
                   number={service.number}
@@ -106,7 +104,7 @@ const NewProducts = () => {
                   textColor="text-white"
                   bgColor="bg-gray-900/50"
                 />
-              </motion.div>
+              </div>
             ))}
           </motion.div>
         </div>
