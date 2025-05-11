@@ -12,42 +12,42 @@ const NewProducts = () => {
       title: 'Proof of Concept (POC) Development',
       link: '/services/service01',
       icon: <FontAwesomeIcon icon={faVial} className="text-white text-3xl" />,
-      description: "In this stage, we focus on demonstrating the technical feasibility of an idea. A basic concept is developed and tested to ensure the idea is workable in real-world conditions. The POC helps identify potential challenges early and ensures that further investment is worthwhile. We provide initial designs, component selection, and basic functionality testing to validate the idea."
+      description: "in this stage, we focus on demonstrating the technical feasibility of an idea. A basic conceptis developed and tested to ensure the idea isworkable in real-world conditions. The POC helpsidentify potential challenges early and ensuresthat further investment is worthwhile. Weprovide initial designs, component selection, and basic functionality testing to validate the idea."
     },
     {
       number: '02',
       title: 'Prototype Development',
       link: '/services/service02',
       icon: <FontAwesomeIcon icon={faDraftingCompass} className="text-white text-3xl" />,
-      description: "Transform concepts into tangible, functional prototypes"
+      description: "Once the POC is validated, we develop a working prototype to demonstrate the core features of the product. This includes refining designs, sourcing components, and assembling the product to a stage where it showcases its primary functionality. Prototyping allows for multiple rounds of testing and improvements, ensuring the product works as expected and meets the user’s needs before moving into mass production."
     },
     {
       number: '03',
       title: 'Design for Manufacturing (DFM)',
       link: '/services/service03',
       icon: <FontAwesomeIcon icon={faProjectDiagram} className="text-white text-3xl" />,
-      description: "Optimize designs for cost-effective mass production"
+      description: "After prototyping, the design is optimized for large-scale production. DFM involves refining the product to be efficiently manufactured, reducing costs, simplifying production processes, and ensuring consistent quality. This stage includes component standardization, material selection, and assembly procedures."
     },
     {
       number: '04',
       title: 'Full-scale Manufacturing',
       link: '/services/service04',
       icon: <FontAwesomeIcon icon={faIndustry} className="text-white text-3xl" />,
-      description: "End-to-end production with quality assurance"
+      description: "After the product design is finalized, we manage the full-scale manufacturing process. We handle everything from production planning, sourcing materials, and setting up manufacturing facilities to quality control. We ensure the product is produced efficiently and at the highest quality, whether for small batch production or large-scale mass manufacturing."
     },
     {
       number: '05',
       title: 'Marketing & Launch Support',
       link: '/services/service05',
       icon: <FontAwesomeIcon icon={faBullhorn} className="text-white text-3xl" />,
-      description: "Strategic go-to-market planning and execution"
+      description: "Once the product is ready, we assist in bringing it to market with strategic marketing solutions. This includes branding, product promotion, digital marketing campaigns, and creating marketing collateral such as brochures, demo videos, and website content. We help set up sales channels and gather customer feedback to refine both the product and marketing strategy, ensuring the product reaches the right audience effectively."
     },
     {
       number: '06',
       title: 'Patent Application Guidance',
       link: '/services/service06',
       icon: <FontAwesomeIcon icon={faBalanceScale} className="text-white text-3xl" />,
-      description: "Protect your intellectual property with expert guidance"
+      description: "We help innovators protect their intellectual property by guiding them through the patent application process. This includes conducting initial patent searches, advising on patentability, and supporting the documentation needed for patent submissions, ensuring that their innovation is legally protected."
     },
   ];
 
