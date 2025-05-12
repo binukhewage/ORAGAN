@@ -88,6 +88,12 @@ export default function Home() {
     },
   ];
 
+  const data = [
+    { value: '07+', label: 'Years Of Trust' },
+    { value: '120+', label: 'Successful Projects' },
+    { value: '10+', label: 'IT Professionals' },
+];
+
   useEffect(() => {
     const swiper = new Swiper('.centered-slide-carousel', {
       centeredSlides: true,
@@ -300,80 +306,105 @@ export default function Home() {
 
 
       {/* About section */}
-      <section id='aboutusSection' className="min-h-screen w-full flex items-center justify-center relative overflow-hidden z-10">
-        <Spotlight className="-top-1/4" />
-        
-        <div className="relative w-full h-full mx-auto">
-          <div className="relative w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className='flex items-center justify-center relative'
-            >
-              <div className="relative w-[300px] h-[400px] md:w-[500px] md:h-[650px]">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-gray-300/10 rounded-3xl filter blur-xl"></div>
-                <img 
-                  src={aboutpageImg.src} 
-                  className="relative w-full h-full object-cover rounded-2xl border border-gray-700/50 shadow-2xl" 
-                  alt="About us" 
-                />
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="flex flex-col justify-center p-4 md:p-0"
-            >
-              <div className="relative">
-                <h2 className="flex items-center text-xl md:text-xl text-white mb-4">
-                  <span className="w-8 h-0.5 bg-gradient-to-r from-gray-300 to-white mr-3"></span>
-                  <span className='text-white'>OUR STORY</span>
-                </h2>
-                
-                <motion.h1 
-                  className="text-3xl md:text-5xl pb-12 pt-3 font-bold items-center bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 leading-tight"
-                >
-                  About <span className="text-white">ORAGAN</span>
-                </motion.h1>
-                
-                <div className="space-y-6 text-gray-300 mb-8 max-w-[550px]">
-                  <motion.p className="text-lg">
-                    Founded in 2019, ORAGAN transforms visionary concepts into market-ready products through our complete innovation ecosystem.
-                  </motion.p>
-                  <motion.p className="text-lg">
-                    We combine engineering precision with strategic insight to help startups and businesses navigate from ideation to successful launch.
-                  </motion.p>
-                  <motion.p className="text-lg">
-                    Our full-stack support includes R&D, product design, prototyping, manufacturing, and go-to-market strategy - ensuring seamless execution at every stage.
-                  </motion.p>
-                </div>
-
-                
-                <motion.div 
-                  className="mt-8"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Link 
-                      href="/aboutus" 
-                      className="bg-white text-black hover:bg-gray-200 shadow-md p-3 rounded-md"
-                    >
-                      Learn More 
-                    </Link>
-                  </motion.div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
+<section id='aboutusSection' className="min-h-screen w-full flex items-center justify-center relative overflow-hidden z-10">
+  <Spotlight className="-top-1/4" />
+  
+  <div className="relative w-full h-full mx-auto">
+    <div className="relative w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <motion.div 
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className='flex items-center justify-center relative'
+      >
+        <div className="relative w-[300px] h-[400px] md:w-[500px] md:h-[650px]">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-gray-300/10 rounded-3xl filter blur-xl"></div>
+          <img 
+            src={aboutpageImg.src} 
+            className="relative w-full h-full object-cover rounded-2xl border border-gray-700/50 shadow-2xl" 
+            alt="About us" 
+          />
         </div>
-      </section>
+      </motion.div>
+      
+      <motion.div 
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="flex flex-col justify-center p-4 md:p-0"
+      >
+        <div className="relative">
+          <h2 className="flex items-center text-xl md:text-xl text-white mb-4">
+            <span className="w-8 h-0.5 bg-gradient-to-r from-gray-300 to-white mr-3"></span>
+            <span className='text-white'>OUR STORY</span>
+          </h2>
+          
+          <motion.h1 
+            className="text-3xl md:text-5xl pb-12 pt-3 font-bold items-center bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 leading-tight"
+          >
+            About <span className="text-white">ORAGAN</span>
+          </motion.h1>
+          
+          <div className="space-y-6 text-gray-300 mb-8 max-w-[550px]">
+            <motion.p className="text-lg">
+              Founded in 2019, ORAGAN transforms visionary concepts into market-ready products through our complete innovation ecosystem.
+            </motion.p>
+            <motion.p className="text-lg">
+              We combine engineering precision with strategic insight to help startups and businesses navigate from ideation to successful launch.
+            </motion.p>
+            <motion.p className="text-lg">
+              Our full-stack support includes R&D, product design, prototyping, manufacturing, and go-to-market strategy - ensuring seamless execution at every stage.
+            </motion.p>
+          </div>
+
+          {/* Stats Section */}
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 my-6 md:my-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            {data.map((item, index) => (
+              <div 
+                key={index} 
+                className="bg-white/5 backdrop-blur-sm border border-gray-700/50 rounded-lg md:rounded-xl p-3 md:p-4 text-center"
+              >
+                <motion.p 
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {item.value}
+                </motion.p>
+                <p className="text-gray-300 mt-1 md:mt-2 text-xs sm:text-sm md:text-base">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </motion.div>
+          
+          <motion.div 
+            className="mt-8"
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link 
+                href="/aboutus" 
+                className="bg-white text-black hover:bg-gray-200 shadow-md p-3 rounded-md"
+              >
+                Learn More 
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
       
 
 
