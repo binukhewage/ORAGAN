@@ -2,8 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-
-
 import OdysseyImage from '../assets/odessey.png';
 import StudioImage from '../assets/innovation-studio.jpg';
 import WorkshopImage from '../assets/workshop-event.jpg';

@@ -46,48 +46,48 @@ export default function Home() {
   const newServices = [
     {
       number: '01',
-      title: 'Proof of Concept (POC) Development',
+      title: 'Proof of Concept (POC)',
       link: '/services/service01',
       icon: <FontAwesomeIcon icon={faVial} className="text-white text-3xl" />,
-      description: "in this stage, we focus on demonstrating the technical feasibility of an idea. A basic conceptis developed and tested to ensure the idea isworkable in real-world conditions. The POC helpsidentify potential challenges early and ensuresthat further investment is worthwhile. Weprovide initial designs, component selection, and basic functionality testing to validate the idea."
+      description: "We create a basic test version of your idea to check if it works in real life."
     },
     {
       number: '02',
       title: 'Prototype Development',
       link: '/services/service02',
       icon: <FontAwesomeIcon icon={faDraftingCompass} className="text-white text-3xl" />,
-      description: "Once the POC is validated, we develop a working prototype to demonstrate the core features of the product. This includes refining designs, sourcing components, and assembling the product to a stage where it showcases its primary functionality. Prototyping allows for multiple rounds of testing and improvements, ensuring the product works as expected and meets the user’s needs before moving into mass production."
+      description: "We build a real working model using electronics, mechanics, software or all three."
     },
     {
       number: '03',
       title: 'Design for Manufacturing (DFM)',
       link: '/services/service03',
       icon: <FontAwesomeIcon icon={faProjectDiagram} className="text-white text-3xl" />,
-      description: "After prototyping, the design is optimized for large-scale production. DFM involves refining the product to be efficiently manufactured, reducing costs, simplifying production processes, and ensuring consistent quality. This stage includes component standardization, material selection, and assembly procedures."
+      description: "We redesign your prototype so it's easy and cost-effective to manufacture at scale."
     },
     {
       number: '04',
       title: 'Full-scale Manufacturing',
       link: '/services/service04',
       icon: <FontAwesomeIcon icon={faIndustry} className="text-white text-3xl" />,
-      description: "After the product design is finalized, we manage the full-scale manufacturing process. We handle everything from production planning, sourcing materials, and setting up manufacturing facilities to quality control. We ensure the product is produced efficiently and at the highest quality, whether for small batch production or large-scale mass manufacturing."
+      description: "We handle the production of your product - from 10 pieces to 10 000+."
     },
     {
       number: '05',
       title: 'Marketing & Launch Support',
       link: '/services/service05',
       icon: <FontAwesomeIcon icon={faBullhorn} className="text-white text-3xl" />,
-      description: "Once the product is ready, we assist in bringing it to market with strategic marketing solutions. This includes branding, product promotion, digital marketing campaigns, and creating marketing collateral such as brochures, demo videos, and website content. We help set up sales channels and gather customer feedback to refine both the product and marketing strategy, ensuring the product reaches the right audience effectively."
+      description: "We help you take your product to market with the right look and tools."
     },
     {
       number: '06',
       title: 'Patent Application Guidance',
       link: '/services/service06',
       icon: <FontAwesomeIcon icon={faBalanceScale} className="text-white text-3xl" />,
-      description: "We help innovators protect their intellectual property by guiding them through the patent application process. This includes conducting initial patent searches, advising on patentability, and supporting the documentation needed for patent submissions, ensuring that their innovation is legally protected."
+      description: "We help you understand how to secure legal protection for your product."
     },
   ];
-
+  
   const data = [
     { value: '07+', label: 'Years Of Trust' },
     { value: '120+', label: 'Successful Projects' },
@@ -181,7 +181,7 @@ export default function Home() {
             title="XION LORA CORE"
             description="Advanced hardware platform with ultra-low power consumption and long-range connectivity"
             link="/projects/hardware/project01"
-            glowColor="from-gray-300/20 to-white/20"  // This will work now
+            glowColor="from-gray-300/20 to-white/20"  
             borderColor="border-gray-300/30"
             badgeText="HARDWARE"
             badgeColor="bg-gray-300 text-black"
@@ -191,7 +191,7 @@ export default function Home() {
             title="IMSP"
             description="Intelligent management system with predictive analytics and real-time monitoring"
             link="/projects/software/project01"
-            glowColor="from-gray-400/20 to-white/20"  // This will work now
+            glowColor="from-gray-400/20 to-white/20"  
             borderColor="border-gray-400/30"
             badgeText="SOFTWARE"
             badgeColor="bg-gray-400 text-black"
@@ -299,6 +299,36 @@ export default function Home() {
       </motion.div>
     ))}
   </motion.div>
+
+  <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="flex flex-col sm:flex-row justify-center items-center gap-4 px-4"
+      >
+        <motion.a
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+          whileTap={{ scale: 0.95 }}
+          href="/idea-into-product"
+          className="w-full sm:w-auto text-center px-6 py-3 sm:px-8 sm:py-3.5 bg-transparent border border-white/30 text-white text-base sm:text-lg font-medium rounded-lg hover:bg-white/5 transition-all duration-300 inline-flex items-center justify-center gap-2"
+        >
+          Explore Our Services
+          {/* Animated Arrow */}
+          <motion.svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="w-5 h-5"
+            animate={{ x: [0, 5, 0] }}
+            transition={{ duration: 1.2, repeat: Infinity }}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </motion.svg>
+        </motion.a>
+      </motion.div>
+
 </section>
 
 <GlowingBorder />
@@ -392,12 +422,6 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link 
-                href="/aboutus" 
-                className="bg-white text-black hover:bg-gray-200 shadow-md p-3 rounded-md"
-              >
-                Learn More 
-              </Link>
             </motion.div>
           </motion.div>
         </div>
