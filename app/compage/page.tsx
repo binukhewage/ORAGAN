@@ -2,11 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import OdysseyImage from '../assets/odessey.png';
-import StudioImage from '../assets/innovation-studio.jpg';
-import WorkshopImage from '../assets/workshop-event.jpg';
+import OdysseyImage from '../assets/odessey.jpg';
+import StudioImage from '../assets/innovisionstudio.jpg';
+import WorkshopImage from '../assets/workshop.webp';
 
-const CountdownPage = () => {
+const page = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -39,39 +39,50 @@ const CountdownPage = () => {
   const events = [
     {
       id: 1,
-      title: "Innovision Odyssey 2025",
+      title: "ORAGAN Innovision Odyssey",
       date: "October 1, 2025",
       image: OdysseyImage,
-      description: "ORAGAN's flagship annual event showcasing and launching new products to the public, investors, and media.",
+      goal: "In this Event:",
+      description: "Innovision Odyssey will be ORAGAN’s flagship annual event, held on October 1, aimed at showcasing and launching new products to the public, investors, and media. It will be a high-profile event similar to major product launches by leading tech companies.",
       highlights: [
-        "Showcase ORAGAN's latest product innovations",
-        "Engage with media, customers, investors, and industry leaders",
-        "Strengthen ORAGAN's position as a leader in product innovation"
+        "Showcase ORAGAN’s latest product innovations.",
+        "Engage with media, customers, investors, and industry leaders.",
+        "Strengthen ORAGAN’s position as a leader in product innovation."
       ]
     },
     {
       id: 2,
-      title: "Innovation Studio",
+      title: "ORAGAN Innovation Studio",
       date: "Ongoing Program",
       image: StudioImage,
-      description: "ORAGAN's incubator for nurturing creative talent and innovative ideas through community engagement and structured programs.",
+      description: "The Innovation Studio is designed to be ORAGAN’s incubator for nurturing creative talent and innovative ideas. The Studio will provide selected individuals with an opportunity to collaborate on real ORAGAN projects, develop their own product ideas, and contribute to the company’s innovation pipeline. This will be achieved through active community engagement, structured internships, and a clear path for promising ideas to progress to commercialization.",
       highlights: [
-        "Community workshops and competitions to identify top talent",
-        "Structured internship programs with mentorship",
-        "Pathway to commercialization for promising innovations"
-      ]
+        "Community Engagement:Identify top talent by hosting workshops and competitions to bring together innovators, students, and entrepreneurs. Participants will be selected based on creativity, feasibility, and potential impact.",
+        "Internship Program: Offer selected participants a structured internship where they collaborate on real ORAGAN projects while developing their own innovative ideas under mentorship.",
+        "Product Pipeline: Promising innovations from the Innovation Studio will be refined and considered for commercialization under ORAGAN’s product development process."
+      ],
+      button: {
+        text: "Apply for Internship Program",
+        link: "https://docs.google.com/forms/d/e/1FAIpQLSdTqWKsNpZU5qhap-pX6xGRs__kHvl71toYj-UIh3YCmbWmJg/viewform"
+      }
     },
     {
       id: 3,
-      title: "Innovision Day Workshop",
+      title: "ORAGAN Innovision Workshop",
       date: "Quarterly Events",
       image: WorkshopImage,
-      description: "Hands-on workshops equipping participants with creative thinking skills and practical innovation tools.",
+      goal: "Workshop Goals:",
+      description: "To equip participants with creative thinking skills, an understanding of the innovation process, and practical tools to turn their ideas into real products. The workshop highlights ORAGAN's role in guiding innovative ideas into successful products.",
       highlights: [
-        "Inspire creative and critical thinking",
-        "Practical techniques for idea validation",
-        "Showcase of ORAGAN's innovation expertise"
-      ]
+        "Inspire creative and critical thinking in participants.",
+        "Demonstrate how to convert ideas into tangible products through structured methodologies.",
+        "Provide practical techniques to solve problems creatively and validate ideas.",
+        "Motivate participants to pursue innovation as a way to make a difference in their respective fields."
+      ],
+      button: {
+        text: "Register for Workshop",
+        link: "https://docs.google.com/forms/d/e/1FAIpQLSd_SKgIWoZWKMCPuzO4htNOPslIXHRsytehcMoVNU0Cq3yvZw/viewform"
+      }
     }
   ];
 
@@ -136,7 +147,7 @@ const CountdownPage = () => {
         {/* Events Showcase */}
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
-            ORAGAN <span className="text-white">Events & Programs</span>
+            ORAGAN <span className="text-white">Innovision Programs</span>
           </h2>
 
           <div className="space-y-24">
@@ -151,26 +162,24 @@ const CountdownPage = () => {
               >
                 <div className="md:w-1/2">
                   <div className="relative rounded-2xl overflow-hidden border border-gray-700/50 aspect-video">
-                    {/* Replace with your actual image component */}
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20"></div>
                     <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
-                      <h3 className="text-2xl font-bold text-black">{event.date}</h3>
+                      <h3 className="text-2xl font-bold text-white">{event.date}</h3>
                     </div>
-                    {/* Placeholder for image - replace with your image component */}
                     <Image
-                        src={event.image}
-                        alt={event.title}
-                        layout="fill"
-                        objectFit="cover"
-                        />
+                      src={event.image}
+                      alt={event.title}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
                   </div>
                 </div>
 
                 <div className="md:w-1/2">
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{event.title}</h3>
                   <p className="text-lg text-gray-300 mb-6">{event.description}</p>
-                  
-                  <ul className="space-y-3">
+                  <p className='text-gray-300 mb-2'>{event.goal}</p>
+                  <ul className="space-y-3 mb-6">
                     {event.highlights.map((highlight, i) => (
                       <li key={i} className="flex items-start">
                         <svg className="h-5 w-5 text-blue-400 mt-1 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -180,6 +189,19 @@ const CountdownPage = () => {
                       </li>
                     ))}
                   </ul>
+
+                  {event.button && (
+                    <motion.a
+                      href={event.button.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300"
+                    >
+                      {event.button.text}
+                    </motion.a>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -190,4 +212,4 @@ const CountdownPage = () => {
   );
 };
 
-export default CountdownPage;
+export default page;

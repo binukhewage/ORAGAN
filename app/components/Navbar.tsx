@@ -46,7 +46,7 @@ export default function Navbar() {
             <ul className="flex space-x-2">
               {[
                 { href: "/", label: "Home" },
-                { href: "/Products", label: "Products" },
+                { href: "/products-page", label: "Products" },
                 { href: "/idea-into-product", label: "Idea into Product" },
                 { href: "https://oragan-dashboard.vercel.app", label: "IoT Core" },
                 { href: "compage", label: "Community" },
@@ -82,7 +82,7 @@ export default function Navbar() {
           <div className="px-4 pt-2 pb-4 space-y-2">
             {[
               { href: "/", label: "Home" },
-              { href: "/Products", label: "Products" },
+              { href: "/products-page", label: "Products" },
               { href: "/idea-into-product", label: "Idea to Product" },
               { href: "https://oragan-dashboard.vercel.app", label: "ORAGAN IOT Core" },
               { href: "compage", label: "Community" },
