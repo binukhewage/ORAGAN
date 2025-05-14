@@ -6,7 +6,7 @@ import service01Image from '../../assets/service01MainImage.png';
 
 const Service = () => {
     return (
-        <main className="relative bg-black overflow-hidden">
+        <main className="relative bg-black overflow-hidden pt-5">
             {/* Glowing background elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/5 rounded-full filter blur-[100px]"></div>
@@ -22,7 +22,7 @@ const Service = () => {
                         className="max-w-4xl w-full text-center mb-12 md:mb-16"
                     >
                         <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight">
-                            Validate Your Vision <span className="text-white">Before You Build It</span>
+                            Proof of Concept <span className="text-white">Development </span>
                         </h1>
                         
                         <motion.p 
@@ -59,10 +59,12 @@ const Service = () => {
                         className="w-full max-w-4xl mb-20"
                     >
                         <div className="flex items-center mb-6">
-                        <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4">
-                            <FaSearch className="text-white text-lg" />
-                        </div>
-                        <h2 className="text-3xl font-bold text-white">What is a Proof of Concept (POC)?</h2>
+                            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4 sm:mr-6">
+                                <FaSearch className="text-white text-base sm:text-lg " />
+                            </div>
+                            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                                What is a Proof of Concept (POC)?
+                            </h2>
                         </div>
                         <div className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-8">
                             <p className="text-gray-300 text-lg leading-relaxed">
@@ -125,10 +127,10 @@ const Service = () => {
                         className="w-full max-w-4xl mb-20"
                     >
                         <div className="flex items-center mb-6">
-                            <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4">
-                                <FaWrench className="text-white text-sm" />
+                            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4 sm:mr-6">
+                                <FaWrench className="text-white text-base sm:text-lg" />
                             </div>
-                            <h2 className="text-3xl font-bold text-white">What We Do in POC Development</h2>
+                            <h2 className="text-2xl sm:text-3xl font-bold text-white">What We Do in POC Development</h2>
                         </div>
                         <div className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-8 mb-8">
                             <p className="text-gray-300 text-lg mb-6">
@@ -169,7 +171,7 @@ const Service = () => {
                             <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4">
                                 <FaLightbulb className="text-white text-sm" /> 
                             </div>
-                            <h2 className="text-3xl font-bold text-white">Example Use Cases</h2>
+                            <h2 className="text-2xl font-bold text-white">Example Use Cases</h2>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                             {[
@@ -208,7 +210,7 @@ const Service = () => {
                             <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4">
                                 <FaRocket className="text-white text-sm" />
                             </div>
-                            <h2 className="text-3xl font-bold text-white">What You Get</h2>
+                            <h2 className="text-2xl font-bold text-white">What You Get</h2>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                             {[
@@ -244,7 +246,7 @@ const Service = () => {
                                 <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4">
                                     <FaBullseye className="text-white text-sm" />
                                 </div>
-                                <h2 className="text-3xl font-bold text-white">Ideal For</h2>
+                                <h2 className="text-2xl font-bold text-white">Ideal For</h2>
                             </div>
                             <div className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6">
                                 <ul className="space-y-3">
@@ -269,7 +271,7 @@ const Service = () => {
                                 <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4">
                                 <FaWrench className="text-white text-sm" />
                                 </div>
-                                <h2 className="text-3xl font-bold text-white">Technologies We Use</h2>
+                                <h2 className="text-2xl font-bold text-white">Technologies We Use</h2>
                             </div>
                             <div className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6">
                                 <p className="text-gray-300 mb-4">Depending on your idea, we might use:</p>
@@ -303,12 +305,15 @@ const Service = () => {
                         viewport={{ once: true }}
                         className="w-full max-w-2xl text-center"
                     >
-                        <div className="flex items-center justify-center mb-6">
-                            <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4">
-                            <FaLightbulb className="text-white text-sm" />  
+                        <div className="flex items-center justify-center mb-6 px-4 flex-wrap text-center sm:text-left">
+                            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full flex items-center justify-center mr-2 sm:mr-4 mb-2 sm:mb-0">
+                                <FaLightbulb className="text-white text-base sm:text-lg" />
                             </div>
-                            <h2 className="text-3xl font-bold text-white">Ready to Build Your Proof of Concept?</h2>
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+                                Ready to Build Your Proof of Concept?
+                            </h2>
                         </div>
+
                         <p className="text-gray-300 text-lg mb-8">
                             Let's make the first version of your idea real. Take the first step toward innovation.
                         </p>
@@ -337,7 +342,7 @@ const Service = () => {
 
                                 {/* Email Field */}
                                 <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2">Your Email</label>
+                                <label className="block text-sm font-medium text-gray-300 mb-2 ju">Your Email</label>
                                 <input 
                                     type="email" 
                                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
