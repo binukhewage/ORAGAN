@@ -21,7 +21,7 @@ const Service = () => {
                         transition={{ duration: 0.8 }}
                         className="max-w-4xl w-full text-center mb-12 md:mb-16"
                     >
-                        <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight">
                             Proof of Concept <span className="text-white">Development </span>
                         </h1>
                         
