@@ -1,44 +1,52 @@
 "use client";
-
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
-const ContactSection: React.FC = () => {
+const ContactSection = () => {
   
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const form = useRef<HTMLFormElement>(null); // Add proper type for the ref
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({
+    success: false,
+    message: ''
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Add null check for form.current
+    if (!form.current) return;
+
     setIsSubmitting(true);
-  
-    try {
-      const response = await fetch('/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+    setSubmitStatus({ success: false, message: '' });
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_d7g7w2o',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_26zfnrg',
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'omp8hrzQ39_CDMihe'
+      )
+      .then(
+        () => {
+          setSubmitStatus({
+            success: true,
+            message: 'Your message has been sent successfully!'
+          });
+          form.current?.reset();
         },
-        body: JSON.stringify(formData),
+        (error) => {
+          setSubmitStatus({
+            success: false,
+            message: 'Failed to send message. Please try again later.'
+          });
+          console.error('EmailJS error:', error.text);
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
       });
-  
-      const result = await response.json();
-  
-      if (response.ok) {
-        alert(result.message);
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        alert('Failed to send the message, please try again later.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Failed to send the message, please try again later.');
-    } finally {
-      setIsSubmitting(false);
-    }
   };
 
   return (
@@ -58,7 +66,7 @@ const ContactSection: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          
+
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -79,6 +87,21 @@ const ContactSection: React.FC = () => {
             Have a project in mind or questions about our services? Reach out to our team.
           </motion.p>
         </motion.div>
+
+        {/* Success/Error Alert */}
+        {submitStatus.message && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`mb-6 p-4 rounded-lg ${
+              submitStatus.success ? 'bg-green-900/50 border border-green-700' : 'bg-red-900/50 border border-red-700'
+            }`}
+          >
+            <p className={`text-center ${submitStatus.success ? 'text-green-300' : 'text-red-300'}`}>
+              {submitStatus.message}
+            </p>
+          </motion.div>
+        )}
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact information */}
@@ -151,15 +174,13 @@ const ContactSection: React.FC = () => {
             className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 shadow-xl"
           >
             <h2 className="text-2xl font-bold text-white mb-6">Ready to Get Started?</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div>
                 <label htmlFor="name" className="sr-only">Your name</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   placeholder="Your name"
                   required
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
@@ -172,8 +193,6 @@ const ContactSection: React.FC = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   placeholder="Your email address"
                   required
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
@@ -186,8 +205,6 @@ const ContactSection: React.FC = () => {
                   id="message"
                   name="message"
                   rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
                   placeholder="Write your message..."
                   required
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
@@ -199,16 +216,12 @@ const ContactSection: React.FC = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-6 py-3.5 bg-white text-black font-medium rounded-lg hover:bg-gray-200 transition-all duration-300 flex items-center justify-center gap-2"
+                className={`w-full px-6 py-3.5 ${
+                  isSubmitting ? 'bg-gray-600' : 'bg-white'
+                } text-black font-medium rounded-lg hover:bg-gray-200 transition-all duration-300 flex items-center justify-center gap-2`}
               >
                 {isSubmitting ? (
-                  <>
-                    <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Sending...
-                  </>
+                  'Sending...'
                 ) : (
                   <>
                     Send Message

@@ -4,15 +4,11 @@ import { motion } from 'framer-motion';
 import { FaSearch, FaCheck, FaWrench, FaRocket, FaBullhorn, FaPalette, FaChartLine, FaNewspaper } from 'react-icons/fa';
 import service05Image from '../../assets/s5.png';
 
+
 const Service = () => {
     return (
         <main className="relative bg-black overflow-hidden pt-5">
-            {/* Glowing background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/5 rounded-full filter blur-[100px]"></div>
-                <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-white/5 rounded-full filter blur-[100px]"></div>
-            </div>
-
+            
             <section className="relative py-20 md:py-32 w-full flex items-center justify-center min-h-screen">
                 <div className="relative z-10 text-white flex flex-col items-center justify-center px-6 md:px-4 max-w-7xl mx-auto">
                     <motion.div 
