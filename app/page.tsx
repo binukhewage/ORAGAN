@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Swiper from 'swiper';
 import 'swiper/css';
@@ -14,14 +14,13 @@ import ReadMoreButton from './components/readMore';
 import Card from './components/ProductCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTools, faLightbulb, faCogs, faMicrochip, faCube, faPrint, faLaptopCode, faBrain, faBullhorn, faBalanceScale, faIndustry, faProjectDiagram, faDraftingCompass, faVial, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
-import NewProductCard from './components/newProjectCard';
 import NewServiceCard from './components/newServices';
 import Link from 'next/link';
 import pdfimage from './assets/pdfimage.png';
 import Hero from './components/Hero';
-import { ArrowRight } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
-// Updated Spotlight component for dark theme
+
 const Spotlight = ({ className }: { className?: string }) => {
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
@@ -32,7 +31,7 @@ const Spotlight = ({ className }: { className?: string }) => {
   );
 };
 
-// Updated GlowingBorder for dark theme
+
 const GlowingBorder = () => (
   <div className="relative h-px w-full my-16 overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
@@ -120,6 +119,40 @@ export default function Home() {
       },
     });
   }, []);
+
+  const form = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!form.current) return;
+
+    setIsSubmitting(true);
+    setShowSuccess(false);
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_d7g7w2o',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_26zfnrg',
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'omp8hrzQ39_CDMihe'
+      )
+      .then(
+        () => {
+          setShowSuccess(true);
+          form.current?.reset();
+          setTimeout(() => setShowSuccess(false), 3000); // Hide after 3 seconds
+        },
+        (error) => {
+          console.error('EmailJS error:', error.text);
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+  };
 
   return (
     <main className="relative bg-black overflow-hidden">
@@ -534,17 +567,16 @@ export default function Home() {
               </div>
             </motion.div>
 
+            
             {/* Idea Review Form */}
-            <motion.div 
-              className="mt-16 relative"
-            >
+            <motion.div className="mt-16 relative">
               <div className="relative bg-gray-900/80 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 shadow-xl overflow-hidden">
                 <h3 className="text-2xl font-semibold text-white mb-2">Get Expert Feedback</h3>
                 <p className="text-gray-400 mb-8 max-w-lg">
                   Submit your idea for a free professional review from our innovation specialists.
                 </p>
 
-                <form className="space-y-6">
+                <form ref={form} onSubmit={sendEmail} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Name Field */}
                     <div>
@@ -554,6 +586,7 @@ export default function Home() {
                         className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
                         placeholder="Enter your name"
                         required
+                        name="name"
                       />
                     </div>
 
@@ -565,6 +598,7 @@ export default function Home() {
                         className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
                         placeholder="Enter your email"
                         required
+                        name="email"
                       />
                     </div>
                   </div>
@@ -576,10 +610,11 @@ export default function Home() {
                       className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300 min-h-[120px]"
                       placeholder="Describe your innovative idea..."
                       required
+                      name="message"
                     ></textarea>
                   </div>
 
-                  {/* Submit Button with Motion */}
+                  {/* Submit Button */}
                   <motion.button 
                     whileHover={{ 
                       scale: 1.02, 
@@ -587,22 +622,43 @@ export default function Home() {
                     }}
                     whileTap={{ scale: 0.98 }}
                     type="submit" 
-                    className="w-full md:w-auto px-8 py-4 bg-white text-black font-medium rounded-lg hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-white/30 flex items-center justify-center gap-2 group"
+                    disabled={isSubmitting}
+                    className={`w-full md:w-auto px-8 py-4 font-medium rounded-lg transition-all duration-300 shadow-md flex items-center justify-center gap-2 group ${
+                      isSubmitting 
+                        ? 'bg-gray-600 cursor-not-allowed' 
+                        : 'bg-white text-black hover:opacity-90 hover:shadow-white/30'
+                    }`}
                   >
-                    Submit for Review
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      className="h-5 w-5 transition-transform group-hover:translate-x-1" 
-                      viewBox="0 0 20 20" 
-                      fill="currentColor"
-                    >
-                      <path 
-                        fillRule="evenodd" 
-                        d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" 
-                        clipRule="evenodd" 
-                      />
-                    </svg>
+                    {isSubmitting ? 'Sending...' : (
+                      <>
+                        Submit for Review
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-5 w-5 transition-transform group-hover:translate-x-1" 
+                          viewBox="0 0 20 20" 
+                          fill="currentColor"
+                        >
+                          <path 
+                            fillRule="evenodd" 
+                            d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" 
+                            clipRule="evenodd" 
+                          />
+                        </svg>
+                      </>
+                    )}
                   </motion.button>
+                  <div className="relative">
+                    {showSuccess && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        className="mb-6 p-4 bg-gray-800/50 border border-gray-700 rounded-lg text-center"
+                      >
+                        <p className="text-green-400">Message sent successfully!</p>
+                      </motion.div>
+                    )}
+                  </div>
                 </form>
               </div>
             </motion.div>

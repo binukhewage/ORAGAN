@@ -4,18 +4,19 @@ import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
-  
-  const form = useRef<HTMLFormElement>(null); // Add proper type for the ref
+
+  const form = useRef<HTMLFormElement>(null); 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({
     success: false,
     message: ''
   });
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Add null check for form.current
+    
     if (!form.current) return;
 
     setIsSubmitting(true);
@@ -87,21 +88,6 @@ const ContactSection = () => {
             Have a project in mind or questions about our services? Reach out to our team.
           </motion.p>
         </motion.div>
-
-        {/* Success/Error Alert */}
-        {submitStatus.message && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className={`mb-6 p-4 rounded-lg ${
-              submitStatus.success ? 'bg-green-900/50 border border-green-700' : 'bg-red-900/50 border border-red-700'
-            }`}
-          >
-            <p className={`text-center ${submitStatus.success ? 'text-green-300' : 'text-red-300'}`}>
-              {submitStatus.message}
-            </p>
-          </motion.div>
-        )}
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact information */}
@@ -231,6 +217,19 @@ const ContactSection = () => {
                   </>
                 )}
               </motion.button>
+              {submitStatus.message && (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`mb-6 p-4 rounded-lg ${
+                    submitStatus.success ? 'bg-green-900/50 border border-green-700' : 'bg-red-900/50 border border-red-700'
+                  }`}
+                >
+                  <p className={`text-center ${submitStatus.success ? 'text-green-300' : 'text-red-300'}`}>
+                    {submitStatus.message}
+                  </p>
+                </motion.div>
+              )}
             </form>
           </motion.div>
         </div>

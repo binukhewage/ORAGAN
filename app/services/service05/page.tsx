@@ -1,11 +1,46 @@
 "use client"
-import React from 'react';
+import {  useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaSearch, FaCheck, FaWrench, FaRocket, FaBullhorn, FaPalette, FaChartLine, FaNewspaper } from 'react-icons/fa';
 import service05Image from '../../assets/s5.png';
-
+import emailjs from '@emailjs/browser';
 
 const Service = () => {
+
+    const form = useRef<HTMLFormElement>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
+
+    const sendEmail = (e: React.FormEvent) => {
+        e.preventDefault();
+        
+        if (!form.current) return;
+
+        setIsSubmitting(true);
+        setShowSuccess(false);
+
+        emailjs
+        .sendForm(
+            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_d7g7w2o',
+            process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_26zfnrg',
+            form.current,
+            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'omp8hrzQ39_CDMihe'
+        )
+        .then(
+            () => {
+            setShowSuccess(true);
+            form.current?.reset();
+            setTimeout(() => setShowSuccess(false), 3000); // Hide after 3 seconds
+            },
+            (error) => {
+            console.error('EmailJS error:', error.text);
+            }
+        )
+        .finally(() => {
+            setIsSubmitting(false);
+        });
+    };
+
     return (
         <main className="relative bg-black overflow-hidden pt-5">
             
@@ -314,66 +349,89 @@ const Service = () => {
                                     Submit your product details for a free marketing assessment and launch plan.
                                 </p>
 
-                                <form className="space-y-6">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        {/* Name Field */}
-                                        <div>
-                                            <label className="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
-                                            <input 
-                                                type="text" 
-                                                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
-                                                placeholder="Enter your name"
-                                                required
-                                            />
-                                        </div>
+                                <form ref={form} onSubmit={sendEmail} className="space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {/* Name Field */}
+                                <div>
+                                <label className="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                                <input 
+                                    type="text" 
+                                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
+                                    placeholder="Enter your name"
+                                    required
+                                    name="name"
+                                />
+                                </div>
 
-                                        {/* Email Field */}
-                                        <div>
-                                            <label className="block text-sm font-medium text-gray-300 mb-2 ju">Your Email</label>
-                                            <input 
-                                                type="email" 
-                                                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
-                                                placeholder="Enter your email"
-                                                required
-                                            />
-                                        </div>
-                                    </div>
+                                {/* Email Field */}
+                                <div>
+                                <label className="block text-sm font-medium text-gray-300 mb-2 ju">Your Email</label>
+                                <input 
+                                    type="email" 
+                                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
+                                    placeholder="Enter your email"
+                                    required
+                                    name="email"
+                                />
+                                </div>
+                            </div>
 
-                                    {/* Product Details */}
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-300 mb-2">Product Details</label>
-                                        <textarea 
-                                            className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300 min-h-[120px]"
-                                            placeholder="Describe your product and marketing needs..."
-                                            required
-                                        ></textarea>
-                                    </div>
+                            {/* Message Field */}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-300 mb-2">Your Idea</label>
+                                <textarea 
+                                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300 min-h-[120px]"
+                                placeholder="Describe your innovative idea..."
+                                required
+                                name="message"
+                                ></textarea>
+                            </div>
 
-
-                                    {/* Submit Button with Motion */}
-                                    <motion.button 
-                                        whileHover={{ 
-                                            scale: 1.02, 
-                                            boxShadow: "0 10px 25px -5px rgba(255,255,255,0.1)" 
-                                        }}
-                                        whileTap={{ scale: 0.98 }}
-                                        type="submit" 
-                                        className="w-full md:w-auto px-8 py-4 bg-white text-black font-medium rounded-lg hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-white/30 flex items-center justify-center gap-2 group"
-                                    >
-                                        Request Launch Plan
+                            {/* Submit Button with Motion */}
+                            <motion.button 
+                                    whileHover={{ 
+                                    scale: 1.02, 
+                                    boxShadow: "0 10px 25px -5px rgba(255,255,255,0.1)" 
+                                    }}
+                                    whileTap={{ scale: 0.98 }}
+                                    type="submit" 
+                                    disabled={isSubmitting}
+                                    className={`w-full md:w-auto px-8 py-4 font-medium rounded-lg transition-all duration-300 shadow-md flex items-center justify-center gap-2 group ${
+                                    isSubmitting 
+                                        ? 'bg-gray-600 cursor-not-allowed' 
+                                        : 'bg-white text-black hover:opacity-90 hover:shadow-white/30'
+                                    }`}
+                                >
+                                    {isSubmitting ? 'Sending...' : (
+                                    <>
+                                        Submit for Review
                                         <svg 
-                                            xmlns="http://www.w3.org/2000/svg" 
-                                            className="h-5 w-5 transition-transform group-hover:translate-x-1" 
-                                            viewBox="0 0 20 20" 
-                                            fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg" 
+                                        className="h-5 w-5 transition-transform group-hover:translate-x-1" 
+                                        viewBox="0 0 20 20" 
+                                        fill="currentColor"
                                         >
-                                            <path 
-                                                fillRule="evenodd" 
-                                                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" 
-                                                clipRule="evenodd" 
-                                            />
+                                        <path 
+                                            fillRule="evenodd" 
+                                            d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" 
+                                            clipRule="evenodd" 
+                                        />
                                         </svg>
-                                    </motion.button>
+                                    </>
+                                    )}
+                                </motion.button>
+                                    <div className="relative">
+                                        {showSuccess && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: -20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: -20 }}
+                                            className="mb-6 p-4 bg-gray-800/50 border border-gray-700 rounded-lg text-center"
+                                        >
+                                            <p className="text-green-400">Message sent successfully!</p>
+                                        </motion.div>
+                                        )}
+                                    </div>
                                 </form>
                             </div>
                         </motion.div>

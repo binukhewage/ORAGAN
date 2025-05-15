@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         {children}
-        <Footer /> {/* Moved inside the body tag */}
+        <Footer /> 
       </body>
     </html>
   );
