@@ -49,7 +49,7 @@ export default function Navbar() {
                 { href: "/products-page", label: "Products" },
                 { href: "/idea-into-product", label: "Idea into Product" },
                 { href: "https://oragan-dashboard.vercel.app", label: "IoT Core" },
-                { href: "compage", label: "Community" },
+                { href: "/community", label: "Community" },
                 { href: "/aboutus", label: "About" },
               ].map((item) => (
                 <li key={item.href}>
@@ -85,7 +85,7 @@ export default function Navbar() {
               { href: "/products-page", label: "Products" },
               { href: "/idea-into-product", label: "Idea to Product" },
               { href: "https://oragan-dashboard.vercel.app", label: "ORAGAN IOT Core" },
-              { href: "compage", label: "Community" },
+              { href: "/community", label: "Community" },
               { href: "/aboutus", label: "About" },
               { href: "/reachus", label: "Reach Us", isCTA: true },
             ].map((item) => (

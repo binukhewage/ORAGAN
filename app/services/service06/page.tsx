@@ -2,7 +2,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaSearch, FaCheck, FaFileAlt, FaGlobe, FaBalanceScale, FaLightbulb, FaShieldAlt } from 'react-icons/fa';
-import service06Image from '../../assets/service06MainImage.png';
+import service06Image from '../../assets/s6.png';
+import { ChevronDownIcon } from '@heroicons/react/24/solid';
+
 
 const Service = () => {
     return (
@@ -31,7 +33,9 @@ const Service = () => {
                             transition={{ delay: 0.3, duration: 0.8 }}
                             className='text-xl md:text-2xl text-gray-400 mb-12'
                         >
-                            Secure your intellectual property with expert patent guidance—from initial search to final submission.
+                            Welcome to our Patent Guidance page! Whether you’re a seasoned inventor or just starting to explore
+the world of intellectual property (IP), this guide will help you understand the patent process, its
+importance, and how you can protect your innovative ideas.
                         </motion.p>
                     </motion.div>
 
@@ -88,28 +92,42 @@ const Service = () => {
                             <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4">
                                 <FaCheck className="text-white text-sm" />
                             </div>
-                            <h2 className="text-3xl font-bold text-white">Why Patent Your Idea?</h2>
+                            <h2 className="text-3xl font-bold text-white">Why Should You Patent Your Idea?</h2>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-6">
                             {[
-                                "Protect Your Invention: Exclusive rights to prevent copying",
-                                "Enhance Business Opportunities: Attract investors and partnerships",
-                                "Monetize Your Invention: License or sell your patent",
-                                "Global Reach: Protection in international markets",
-                                "Increase Market Value: Adds tangible asset to your business",
-                                "Legal Recourse: Ability to take action against infringers"
+                                {
+                                title: "Protect Your Invention",
+                                description: "A patent gives you the exclusive right to your invention and prevents others from copying it.",
+                                },
+                                {
+                                title: "Enhance Business Opportunities",
+                                description: "Patents can increase your credibility and potentially attract investment or partnerships.",
+                                },
+                                {
+                                title: "Monetize Your Invention",
+                                description: "You can license your patent to other companies or sell it for profit.",
+                                },
+                                {
+                                title: "Global Reach",
+                                description: "A patent can open the door to international markets by offering protection in other countries.",
+                                },
                             ].map((item, index) => (
                                 <motion.div
-                                    key={index}
-                                    whileHover={{ y: -5 }}
-                                    className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6 flex items-start"
+                                key={index}
+                                whileHover={{ y: -5 }}
+                                className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6 flex items-start"
                                 >
-                                    <span className="text-blue-400 mr-3">●</span>
-                                    <p className="text-gray-300">{item}</p>
+                                <span className="text-blue-400 mr-3 mt-1">●</span>
+                                <div>
+                                    <p className="text-gray-100 font-semibold">{item.title}</p>
+                                    <p className="text-gray-300 text-sm mt-1">{item.description}</p>
+                                </div>
                                 </motion.div>
                             ))}
                         </div>
+
                     </motion.section>
 
                     {/* Types of Patents Section */}
@@ -131,15 +149,15 @@ const Service = () => {
                                 {[
                                     {
                                         title: "1. Utility Patents",
-                                        content: "Protect functional aspects of inventions (most common)"
+                                        content: "The most commin type, protecting the functional aspect of an invention."
                                     },
                                     {
                                         title: "2. Design Patents",
-                                        content: "Protect ornamental design/appearance"
+                                        content: "Protect ornamental design or appearance of an object."
                                     },
                                     {
                                         title: "3. Plant Patents",
-                                        content: "Protect new plant varieties"
+                                        content: "Protect new plant varieties that are asexually reproduced."
                                     }
                                 ].map((item, index) => (
                                     <motion.div 
@@ -176,23 +194,23 @@ const Service = () => {
                                 {[
                                     {
                                         title: "1. Idea Evaluation",
-                                        content: "Conduct preliminary search for novelty"
+                                        content: "Conduct a preliminary search to ensure your idea is novel and non-obvious."
                                     },
                                     {
                                         title: "2. Patent Application",
-                                        content: "Prepare detailed description and drawings"
+                                        content: "File a patent application that includes a detailed description of your invention and any related drawings."
                                     },
                                     {
                                         title: "3. Patent Examination",
-                                        content: "Review by patent examiner (12-36 months)"
+                                        content: "After filling, a patent examiner reviews the application to determine whether it meets the patent criteria."
                                     },
                                     {
                                         title: "4. Patent Grant",
-                                        content: "Approval and official patent issuance"
+                                        content: "If the application is approved, you are granted a patent for your invention."
                                     },
                                     {
                                         title: "5. Patent Enforcement",
-                                        content: "Protect against infringement (20 years)"
+                                        content: "Once you have a patent, you have the right to take legal action if others infringe on it."
                                     }
                                 ].map((item, index) => (
                                     <motion.div 
@@ -226,27 +244,41 @@ const Service = () => {
                         <div>
                             <div className="flex items-center mb-6">
                                 <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4">
-                                    <FaLightbulb className="text-white text-sm" />
+                                <FaLightbulb className="text-white text-sm" />
                                 </div>
                                 <h2 className="text-2xl font-bold text-white">How to Start</h2>
                             </div>
+
                             <div className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6">
-                                <ol className="space-y-4 list-decimal list-inside">
-                                    {[
-                                        "Conduct a Patent Search (check existing patents)",
-                                        "Hire a Patent Attorney/Agent for guidance",
-                                        "Prepare Application (description, drawings, claims)",
-                                        "File with Patent Office (local or international)",
-                                        "Respond to Office Actions (examiner queries)",
-                                        "Maintain Your Patent (renewal fees)"
-                                    ].map((item, index) => (
-                                        <li key={index} className="text-gray-300">
-                                            {item}
-                                        </li>
-                                    ))}
+                                <ol className="space-y-6 list-decimal list-inside">
+                                <li className="text-gray-100">
+                                    <span className="font-semibold">Conduct a Patent Search:</span>{" "}
+                                    <p className="text-gray-300 mt-1">
+                                    Before applying for a patent, it’s essential to check whether your idea is already patented. You can do this through online databases or with the help of a patent attorney.
+                                    </p>
+                                </li>
+
+                                <li className="text-gray-100">
+                                    <span className="font-semibold">Hire a Patent Attorney or Agent:</span>{" "}
+                                    <p className="text-gray-300 mt-1">
+                                    Navigating the patent system can be complex. A patent attorney or agent can guide you through the process, help with drafting your application, and ensure your idea is fully protected.
+                                    </p>
+                                </li>
+
+                                <li className="text-gray-100">
+                                    <span className="font-semibold">Prepare Your Patent Application:</span>
+                                    <p className="text-gray-300 mt-1">A complete patent application typically includes:</p>
+                                    <ul className="list-disc list-inside text-gray-300 mt-2 pl-4 space-y-1">
+                                    <li><span className="font-medium text-gray-200">Abstract:</span> A brief summary of your invention.</li>
+                                    <li><span className="font-medium text-gray-200">Detailed Description:</span> A detailed written explanation of your invention and its uses.</li>
+                                    <li><span className="font-medium text-gray-200">Drawings:</span> Diagrams that show how the invention works.</li>
+                                    <li><span className="font-medium text-gray-200">Claims:</span> The part of the patent that defines the scope of your protection.</li>
+                                    </ul>
+                                </li>
                                 </ol>
                             </div>
                         </div>
+
 
                         <div>
                             <div className="flex items-center mb-6">
@@ -256,13 +288,12 @@ const Service = () => {
                                 <h2 className="text-2xl font-bold text-white">Cost Considerations</h2>
                             </div>
                             <div className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6">
-                                <ul className="space-y-3">
+                                <ul className="space-y-4">
                                     {[
-                                        "Patent Search: $500-$3,000",
-                                        "Filing Fees: $300-$1,600 (varies by country)",
-                                        "Attorney Fees: $5,000-$15,000 (utility patent)",
-                                        "International Protection: $4,000+ per country",
-                                        "Maintenance Fees: $400-$7,400 over patent life"
+                                        "Patent Search: Charges for conducting a patent search to ensure your idea is unique.",
+                                        "Filing Fees: Fees for submmittng your application to the relavant patent office.",
+                                        "Attorney Fees: Proffesional fees for drafting and filling the application.",
+                                        "Maintenance Fees: Ongoing fees to keep your patent active once granted."
                                     ].map((item, index) => (
                                         <li key={index} className="flex items-start">
                                             <span className="text-blue-400 mr-2 mt-1">•</span>
@@ -286,37 +317,57 @@ const Service = () => {
                             <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4">
                                 <FaSearch className="text-white text-sm" />
                             </div>
-                            <h2 className="text-2xl font-bold text-white">Frequently Asked Questions</h2>
+                            <h2 className="text-2xl font-bold text-white">FAQ</h2>
                         </div>
                         
                         <div className="space-y-4">
                             {[
                                 {
                                     question: "How long does it take to get a patent?",
-                                    answer: "Typically 12-36 months from filing, depending on complexity and patent office workload."
+                                    answer: "The patent process can take anywhere from several months to a few years, depending on the complexity of the invention and the patent office’s workload."
                                 },
                                 {
                                     question: "Can I patent an idea or just the implementation?",
-                                    answer: "Only specific implementations meeting novelty, utility, and non-obviousness requirements can be patented."
+                                    answer: "You can only patent the specific implementation of an idea that meets the requirements for patentability (novelty, utility, and non-obviousness). Abstract ideas cannot be patented. "
                                 },
                                 {
                                     question: "What happens if someone infringes my patent?",
-                                    answer: "You can sue for damages and seek an injunction to stop unauthorized use."
+                                    answer: "If someone violates your patent rights, you have the legal option to sue for damages and seek an injunction to stop them from using your invention."
                                 },
                                 {
                                     question: "Can I patent internationally?",
-                                    answer: "Yes, via PCT or regional agreements, but requires separate filings in each country."
+                                    answer: "Yes, but you will need to file separate patent applications in each country or region where you want protection. International patent protection can be obtained via the Patent Cooperation Treaty (PCT) or regional agreements like the European Patent Convention (EPC)."
                                 }
-                            ].map((item, index) => (
-                                <motion.div
-                                    key={index}
-                                    whileHover={{ y: -3 }}
-                                    className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6"
-                                >
-                                    <h3 className="text-lg font-semibold text-white mb-2">{item.question}</h3>
-                                    <p className="text-gray-400">{item.answer}</p>
-                                </motion.div>
-                            ))}
+                            ].map((item, index) => {
+                                const [isOpen, setIsOpen] = React.useState(false);
+                                
+                                return (
+                                    <motion.div
+                                        key={index}
+                                        whileHover={{ y: -3 }}
+                                        className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6 cursor-pointer"
+                                        onClick={() => setIsOpen(!isOpen)}
+                                    >
+                                        <div className="flex justify-between items-center">
+                                            <h3 className="text-lg font-semibold text-white mb-2">{item.question}</h3>
+                                            <motion.div
+                                                animate={{ rotate: isOpen ? 180 : 0 }}
+                                                transition={{ duration: 0.2 }}
+                                            >
+                                                <ChevronDownIcon className="h-5 w-5 text-gray-400" />
+                                            </motion.div>
+                                        </div>
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                                            transition={{ duration: 0.2 }}
+                                            className="overflow-hidden"
+                                        >
+                                            <p className="text-gray-400 pt-2">{item.answer}</p>
+                                        </motion.div>
+                                    </motion.div>
+                                )
+                            })}
                         </div>
                     </motion.section>
 

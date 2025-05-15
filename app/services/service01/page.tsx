@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaSearch, FaCheck, FaWrench, FaLightbulb, FaBullseye, FaRocket } from 'react-icons/fa';
-import service01Image from '../../assets/service01MainImage.png';
+import service01Image from '../../assets/s1.png';
 
 const Service = () => {
     return (
@@ -179,15 +179,13 @@ const Service = () => {
                                 "A wearable device that tracks posture",
                                 "A simple app that connects two devices via Bluetooth",
                                 "An industrial solution that automates a manual process",
-                                "A healthcare monitoring device prototype",
-                                "An agri-tech solution for crop monitoring"
                             ].map((item, index) => (
                                 <motion.div
                                     key={index}
                                     whileHover={{ scale: 1.02 }}
                                     className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6"
                                 >
-                                    <p className="text-gray-300">{item}</p>
+                                    <p className="text-gray-300"><span className="text-blue-400 mr-3 mt-1">•</span>{item}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -216,10 +214,8 @@ const Service = () => {
                             {[
                                 "A working POC model or demo",
                                 "Visual explanation and documentation",
-                                "Feasibility analysis report",
+                                "Feasibility analysis",
                                 "Technical guidance for next phase",
-                                "Risk assessment and mitigation plan",
-                                "Recommendations for full development"
                             ].map((item, index) => (
                                 <motion.div
                                     key={index}
@@ -255,7 +251,6 @@ const Service = () => {
                                         "Enterprises launching innovation initiatives",
                                         "Inventors testing product ideas",
                                         "NGOs validating field solutions",
-                                        "Researchers testing technical feasibility"
                                     ].map((item, index) => (
                                         <li key={index} className="flex items-start">
                                             <span className="text-blue-400 mr-2 mt-1">•</span>
@@ -282,7 +277,6 @@ const Service = () => {
                                         "Embedded firmware",
                                         "Simple mobile/web interfaces",
                                         "3D printing or breadboards",
-                                        "Rapid prototyping tools"
                                     ].map((item, index) => (
                                         <li key={index} className="flex items-start">
                                             <span className="text-blue-400 mr-2 mt-1">•</span>
@@ -290,7 +284,7 @@ const Service = () => {
                                         </li>
                                     ))}
                                 </ul>
-                                <p className="text-gray-300 mt-4 italic">
+                                <p className="text-gray-300 mt-4 ">
                                     We use the right tech stack to build fast, test faster.
                                 </p>
                             </div>

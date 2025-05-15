@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaSearch, FaCheck, FaWrench, FaIndustry, FaBoxOpen, FaGlobe, FaShieldAlt, FaQrcode } from 'react-icons/fa';
-import service04Image from '../../assets/service04MainImage.png';
+import service04Image from '../../assets/s4.png';
 
 const Service = () => {
     return (
@@ -98,7 +98,6 @@ const Service = () => {
                                 "Opens doors to retail, eCommerce, and export markets",
                                 "Enables real user adoption and commercial growth",
                                 "Saves time and eliminates coordination headaches",
-                                "At ORAGAN, we handle the complexities—so you can focus on scaling your business"
                             ].map((item, index) => (
                                 <motion.div
                                     key={index}
@@ -109,6 +108,11 @@ const Service = () => {
                                     <p className="text-gray-300">{item}</p>
                                 </motion.div>
                             ))}
+                        </div>
+                        <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6 mt-8">
+                            <p className="text-gray-300 font-medium">
+                            AT ORAGAN, WE HANDLE THE COMPLEXITIES—SO YOU CAN FOCUS ON SCALING YOUR BUSINESS.
+                            </p>
                         </div>
                     </motion.section>
 
@@ -139,7 +143,6 @@ const Service = () => {
                                     "Packaging & labeling",
                                     "Logistics support and shipping coordination",
                                     "Batch certifications (if required)",
-                                    "Whether your product is IoT-based, solar-powered, or sensor-enabled—we build it with care"
                                 ].map((item, index) => (
                                     <div key={index} className="flex items-start">
                                         <span className="text-blue-400 mr-2 mt-1">•</span>
@@ -148,9 +151,9 @@ const Service = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6">
+                        <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6 mt-8">
                             <p className="text-gray-300 font-medium">
-                                WE DON'T JUST SHIP BOXES—WE SHIP SUCCESS.
+                                WHETHER YOUR PRODUCT IS IOT-BASED, SOLAR POWERED OR SENSOR ENABLED - WE BUILD IT WITH CARE.
                             </p>
                         </div>
                     </motion.section>
@@ -246,7 +249,7 @@ const Service = () => {
                                     whileHover={{ scale: 1.02 }}
                                     className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6"
                                 >
-                                    <p className="text-gray-300">{item}</p>
+                                    <p className="text-gray-300"><span className="text-blue-400 mr-2 mt-1">•</span>{item}</p>
                                 </motion.div>
                             ))}
                         </div>

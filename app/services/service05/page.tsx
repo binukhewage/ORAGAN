@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaSearch, FaCheck, FaWrench, FaRocket, FaBullhorn, FaPalette, FaChartLine, FaNewspaper } from 'react-icons/fa';
-import service05Image from '../../assets/service05MainImage.png';
+import service05Image from '../../assets/s5.png';
 
 const Service = () => {
     return (
@@ -98,7 +98,6 @@ const Service = () => {
                                 "Builds trust and credibility at launch",
                                 "Maximizes return on your R&D and manufacturing investment",
                                 "Enables you to enter markets confidently",
-                                "This phase is where vision meets visibility"
                             ].map((item, index) => (
                                 <motion.div
                                     key={index}
@@ -109,6 +108,11 @@ const Service = () => {
                                     <p className="text-gray-300">{item}</p>
                                 </motion.div>
                             ))}
+                        </div>
+                        <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6 mt-8">
+                            <p className="text-gray-300 font-medium">
+                            THIS PHASE IS WHERE VISION MEETS VISIBILITY. 
+                            </p>
                         </div>
                     </motion.section>
 
@@ -203,7 +207,6 @@ const Service = () => {
                                         "Startups seeking traction and early adopters",
                                         "Businesses entering new verticals or rebranding",
                                         "Exporters looking to attract global buyers",
-                                        "Whether your product is IoT-based, renewable-energy driven, or AI-powered—we help make it matter to your audience"
                                     ].map((item, index) => (
                                         <li key={index} className="flex items-start">
                                             <span className="text-blue-400 mr-2 mt-1">•</span>
@@ -212,8 +215,10 @@ const Service = () => {
                                     ))}
                                 </ul>
                             </div>
-                        </div>
+                        </div> 
+                        
                     </motion.div>
+                    
 
                     {/* ORAGAN Advantage Section */}
                     <motion.section
@@ -235,16 +240,20 @@ const Service = () => {
                                 "In-house creatives who understand tech and storytelling",
                                 "Marketing grounded in your product's real-world use cases",
                                 "Access to a launch playbook tailored for innovators",
-                                "We don't just promote — we elevate"
                             ].map((item, index) => (
                                 <motion.div
                                     key={index}
                                     whileHover={{ scale: 1.02 }}
                                     className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6"
                                 >
-                                    <p className="text-gray-300">{item}</p>
+                                    <p className="text-gray-300"><span className="text-blue-400 mr-3 mt-1">•</span>{item}</p>
                                 </motion.div>
                             ))}
+                        </div>
+                        <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6 mt-8">
+                            <p className="text-gray-300 font-medium">
+                                WE DON'T JUST PROMOTE — WE ELEVATE.  
+                            </p>
                         </div>
                     </motion.section>
 

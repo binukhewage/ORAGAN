@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaSearch, FaCheck, FaWrench, FaLightbulb, FaBullseye, FaRocket, FaIndustry, FaBoxes } from 'react-icons/fa';
-import service03Image from '../../assets/service03MainImage.png';
+import service03Image from '../../assets/s3.png';
 
 const Service = () => {
     return (
@@ -71,7 +71,7 @@ const Service = () => {
                                 Design for Manufacturing (DFM) is the critical engineering phase where your prototype is optimized for efficient, large-scale production. It ensures that your product can be manufactured repeatedly—with high quality, low cost, and minimal errors.
                             </p>
                             <p className="text-gray-300 text-lg mt-4 leading-relaxed">
-                                Whether you're planning to build 100 units or 100,000, DFM is the foundation for smooth, scalable production.
+                                Whether you're planning to build 100 units or 100,000 DFM is the foundation for smooth, scalable production.
                             </p>
                         </div>
                     </motion.section>
@@ -98,7 +98,6 @@ const Service = () => {
                                 "Prevents production delays due to overlooked design flaws",
                                 "Improves product reliability and consistency",
                                 "Ensures vendor readiness and compatibility with manufacturing standards",
-                                "Skipping DFM can lead to expensive mistakes. Doing it right brings peace of mind and a successful product launch."
                             ].map((item, index) => (
                                 <motion.div
                                     key={index}
@@ -109,6 +108,11 @@ const Service = () => {
                                     <p className="text-gray-300">{item}</p>
                                 </motion.div>
                             ))}
+                        </div>
+                        <div className="bg-blue-900/20 border border-blue-700/50 rounded-xl p-6 mt-8">
+                            <p className="text-gray-300 font-medium">
+                            SKIPPING DFM CAN LEAD TO EXPENSIVE MISTAKES. DOING IT RIGHT BRINGS PEACE OF MIND AND A SUCCESSFUL PRODUCT LAUNCH.
+                            </p>
                         </div>
                     </motion.section>
 
@@ -183,7 +187,7 @@ const Service = () => {
                                     whileHover={{ scale: 1.02 }}
                                     className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6"
                                 >
-                                    <p className="text-gray-300">{item}</p>
+                                    <p className="text-gray-300"><span className="text-blue-400 mr-2 mt-1">•</span>{item}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -232,12 +236,11 @@ const Service = () => {
                             </div>
                             <div className="bg-gray-900/50 border border-gray-700/50 rounded-xl p-6">
                                 <p className="text-gray-300 mb-4">
-                                    We don't just design. We build. Our hands-on experience in prototyping, electronics, 3D printing, and manufacturing gives us an unmatched edge in understanding real-world constraints.
+                                    <span className='font-bold'>WE DON't JUST DESIGN. WE BUILD</span><br/> <br/>
+                                    Our hands-on experience in prototyping, electronics, 3D printing, and manufacturing gives us an unmatched edge in understanding real-world constraints.
                                 </p>
                                 <div className="space-y-3">
                                     {[
-                                        "Work alongside local and global manufacturers",
-                                        "Combine design precision with production wisdom",
                                         "Proven track record of successful product launches",
                                         "Deep expertise in cost optimization"
                                     ].map((item, index) => (
