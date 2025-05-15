@@ -8,14 +8,10 @@ import aboutpageImg from './assets/aboutimg1.png';
 import software from './assets/software.png';
 import Hardware from './assets/hardware.png';
 import './assets/css/style.css';
-import ServiceCard from './components/ServiceCard';
-import Button from './components/Button';
-import ReadMoreButton from './components/readMore';
 import Card from './components/ProductCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTools, faLightbulb, faCogs, faMicrochip, faCube, faPrint, faLaptopCode, faBrain, faBullhorn, faBalanceScale, faIndustry, faProjectDiagram, faDraftingCompass, faVial, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import NewServiceCard from './components/newServices';
-import Link from 'next/link';
 import pdfimage from './assets/pdfimage.png';
 import Hero from './components/Hero';
 import emailjs from '@emailjs/browser';
@@ -264,204 +260,204 @@ export default function Home() {
       <GlowingBorder />
 
       {/* Services section */}
-<section 
-  id='projectSection' 
-  className="w-full relative items-center justify-center py-16 px-6 md:py-16 md:px-12 space-y-8 z-10"
->
-  <Spotlight className="-top-1/3" />
-  
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-    className="relative max-w-7xl mx-auto text-center"
-  >
-    <h2 className="flex items-center justify-center text-xl md:text-xl mb-4">
-      <span className="w-8 h-0.5 bg-gradient-to-r from-gray-300 to-white mr-3"></span>
-      <span className='text-gray-300 pr-1 font-medium tracking-wider'>END-TO-END</span>
-      <span className='text-white'>SERVICES</span>
-    </h2>
-    
-    <motion.h1 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
-      viewport={{ once: true }}
-      className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight"
-    >
-      Idea <span className="text-white">into</span> Product
-    </motion.h1>
-    
-    <motion.p 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.4 }}
-      viewport={{ once: true }}
-      className='text-lg md:text-xl text-gray-400 max-w-3xl mx-auto'
-    >
-      Our comprehensive service pipeline transforms your vision into a tangible, market-ready product
-    </motion.p>
-  </motion.div>
-
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, delay: 0.6 }}
-    viewport={{ once: true }}
-    className="relative max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
-  >
-    {newServices.map((newservice, index) => (
-      <motion.div
-        key={index}
-        whileHover={{ y: -10 }}
-        transition={{ type: "spring", stiffness: 300 }}
+      <section 
+        id='projectSection' 
+        className="w-full relative items-center justify-center py-16 px-6 md:py-16 md:px-12 space-y-8 z-10"
       >
-        <NewServiceCard
-          number={newservice.number}
-          title={newservice.title}
-          description={newservice.description}
-          link={newservice.link}
-          icon={newservice.icon}
-          className="hover:bg-gradient-to-br hover:from-primary/10 hover:to-secondary/10 transition-all duration-300"
-          glowColor="from-white/10 to-white/20"
-          borderColor="border-gray-700/50 hover:border-primary/30"
-          textColor="text-white"
-          bgColor="bg-gray-900/50 hover:bg-gray-800/50"
-        />
-      </motion.div>
-    ))}
-  </motion.div>
-
-  <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-        className="flex flex-col sm:flex-row justify-center items-center gap-4 px-4"
-      >
-        <motion.a
-          whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
-          whileTap={{ scale: 0.95 }}
-          href="/idea-into-product"
-          className="w-full sm:w-auto text-center px-6 py-3 sm:px-8 sm:py-3.5 bg-transparent border border-white/30 text-white text-base sm:text-lg font-medium rounded-lg hover:bg-white/5 transition-all duration-300 inline-flex items-center justify-center gap-2"
+        <Spotlight className="-top-1/3" />
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="relative max-w-7xl mx-auto text-center"
         >
-          Explore Our Services
-          {/* Animated Arrow */}
-          <motion.svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="2"
-            className="w-5 h-5"
-            animate={{ x: [0, 5, 0] }}
-            transition={{ duration: 1.2, repeat: Infinity }}
+          <h2 className="flex items-center justify-center text-xl md:text-xl mb-4">
+            <span className="w-8 h-0.5 bg-gradient-to-r from-gray-300 to-white mr-3"></span>
+            <span className='text-gray-300 pr-1 font-medium tracking-wider'>END-TO-END</span>
+            <span className='text-white'>SERVICES</span>
+          </h2>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-          </motion.svg>
-        </motion.a>
-      </motion.div>
+            Idea <span className="text-white">into</span> Product
+          </motion.h1>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className='text-lg md:text-xl text-gray-400 max-w-3xl mx-auto'
+          >
+            Our comprehensive service pipeline transforms your vision into a tangible, market-ready product
+          </motion.p>
+        </motion.div>
 
-</section>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="relative max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
+        >
+          {newServices.map((newservice, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ y: -10 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <NewServiceCard
+                number={newservice.number}
+                title={newservice.title}
+                description={newservice.description}
+                link={newservice.link}
+                icon={newservice.icon}
+                className="hover:bg-gradient-to-br hover:from-primary/10 hover:to-secondary/10 transition-all duration-300"
+                glowColor="from-white/10 to-white/20"
+                borderColor="border-gray-700/50 hover:border-primary/30"
+                textColor="text-white"
+                bgColor="bg-gray-900/50 hover:bg-gray-800/50"
+              />
+            </motion.div>
+          ))}
+        </motion.div>
 
-<GlowingBorder />
+        <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex flex-col sm:flex-row justify-center items-center gap-4 px-4"
+            >
+              <motion.a
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+                whileTap={{ scale: 0.95 }}
+                href="/idea-into-product"
+                className="w-full sm:w-auto text-center px-6 py-3 sm:px-8 sm:py-3.5 bg-transparent border border-white/30 text-white text-base sm:text-lg font-medium rounded-lg hover:bg-white/5 transition-all duration-300 inline-flex items-center justify-center gap-2"
+              >
+                Explore Our Services
+                {/* Animated Arrow */}
+                <motion.svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="w-5 h-5"
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.2, repeat: Infinity }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </motion.svg>
+              </motion.a>
+            </motion.div>
+
+      </section>
+
+    <GlowingBorder />
 
 
 
       {/* About section */}
-<section id='aboutusSection' className="min-h-screen w-full flex items-center justify-center relative overflow-hidden z-10">
-  <Spotlight className="-top-1/4" />
-  
-  <div className="relative w-full h-full mx-auto">
-    <div className="relative w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <motion.div 
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className='flex items-center justify-center relative'
-      >
-        <div className="relative w-[300px] h-[400px] md:w-[500px] md:h-[650px]">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-gray-300/10 rounded-3xl filter blur-xl"></div>
-          <img 
-            src={aboutpageImg.src} 
-            className="relative w-full h-full object-cover rounded-2xl border border-gray-700/50 shadow-2xl" 
-            alt="About us" 
-          />
-        </div>
-      </motion.div>
-      
-      <motion.div 
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="flex flex-col justify-center p-4 md:p-0"
-      >
-        <div className="relative">
-          <h2 className="flex items-center text-xl md:text-xl text-white mb-4">
-            <span className="w-8 h-0.5 bg-gradient-to-r from-gray-300 to-white mr-3"></span>
-            <span className='text-white'>OUR STORY</span>
-          </h2>
-          
-          <motion.h1 
-            className="text-3xl md:text-5xl pb-12 pt-3 font-bold items-center bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 leading-tight"
-          >
-            About <span className="text-white">ORAGAN</span>
-          </motion.h1>
-          
-          <div className="space-y-6 text-gray-300 mb-8 max-w-[550px]">
-            <motion.p className="text-lg">
-              Founded in 2019, ORAGAN transforms visionary concepts into market-ready products through our complete innovation ecosystem.
-            </motion.p>
-            <motion.p className="text-lg">
-              We combine engineering precision with strategic insight to help startups and businesses navigate from ideation to successful launch.
-            </motion.p>
-            <motion.p className="text-lg">
-              Our full-stack support includes R&D, product design, prototyping, manufacturing, and go-to-market strategy - ensuring seamless execution at every stage.
-            </motion.p>
-          </div>
-
-          {/* Stats Section */}
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 my-6 md:my-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            {data.map((item, index) => (
-              <div 
-                key={index} 
-                className="bg-white/5 backdrop-blur-sm border border-gray-700/50 rounded-lg md:rounded-xl p-3 md:p-4 text-center"
-              >
-                <motion.p 
-                  className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  {item.value}
-                </motion.p>
-                <p className="text-gray-300 mt-1 md:mt-2 text-xs sm:text-sm md:text-base">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </motion.div>
-          
-          <motion.div 
-            className="mt-8"
-          >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+      <section id='aboutusSection' className="min-h-screen w-full flex items-center justify-center relative overflow-hidden z-10">
+        <Spotlight className="-top-1/4" />
+        
+        <div className="relative w-full h-full mx-auto">
+          <div className="relative w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className='flex items-center justify-center relative'
             >
+              <div className="relative w-[300px] h-[400px] md:w-[500px] md:h-[650px]">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-gray-300/10 rounded-3xl filter blur-xl"></div>
+                <img 
+                  src={aboutpageImg.src} 
+                  className="relative w-full h-full object-cover rounded-2xl border border-gray-700/50 shadow-2xl" 
+                  alt="About us" 
+                />
+              </div>
             </motion.div>
-          </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="flex flex-col justify-center p-4 md:p-0"
+            >
+              <div className="relative">
+                <h2 className="flex items-center text-xl md:text-xl text-white mb-4">
+                  <span className="w-8 h-0.5 bg-gradient-to-r from-gray-300 to-white mr-3"></span>
+                  <span className='text-white'>OUR STORY</span>
+                </h2>
+                
+                <motion.h1 
+                  className="text-3xl md:text-5xl pb-12 pt-3 font-bold items-center bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 leading-tight"
+                >
+                  About <span className="text-white">ORAGAN</span>
+                </motion.h1>
+                
+                <div className="space-y-6 text-gray-300 mb-8 max-w-[550px]">
+                  <motion.p className="text-lg">
+                    Founded in 2019, ORAGAN transforms visionary concepts into market-ready products through our complete innovation ecosystem.
+                  </motion.p>
+                  <motion.p className="text-lg">
+                    We combine engineering precision with strategic insight to help startups and businesses navigate from ideation to successful launch.
+                  </motion.p>
+                  <motion.p className="text-lg">
+                    Our full-stack support includes R&D, product design, prototyping, manufacturing, and go-to-market strategy - ensuring seamless execution at every stage.
+                  </motion.p>
+                </div>
+
+                {/* Stats Section */}
+                <motion.div 
+                  className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 my-6 md:my-8"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  {data.map((item, index) => (
+                    <div 
+                      key={index} 
+                      className="bg-white/5 backdrop-blur-sm border border-gray-700/50 rounded-lg md:rounded-xl p-3 md:p-4 text-center"
+                    >
+                      <motion.p 
+                        className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        {item.value}
+                      </motion.p>
+                      <p className="text-gray-300 mt-1 md:mt-2 text-xs sm:text-sm md:text-base">
+                        {item.label}
+                      </p>
+                    </div>
+                  ))}
+                </motion.div>
+                
+                <motion.div 
+                  className="mt-8"
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                  </motion.div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </motion.div>
-    </div>
-  </div>
-</section>
+      </section>
       
 
 
@@ -556,7 +552,8 @@ export default function Home() {
                     <motion.a 
                       whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(255,255,255,0.1)" }}
                       whileTap={{ scale: 0.98 }}
-                      href="./ORAGAN Innovation Playbook_ Turning Your Idea into a Market-Ready Product"
+                      href="/ORAGAN Innovation Playbook.pdf"
+                      download="ORAGAN Innovation-Playbook.pdf"
                       target="_blank"
                       className="px-6 py-3.5 bg-white text-black font-medium rounded-lg hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-white/30 flex items-center gap-2"
                     >
