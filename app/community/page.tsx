@@ -43,7 +43,7 @@ const page = () => {
       date: "October 1, 2025",
       image: OdysseyImage,
       goal: "In this Event:",
-      description: "Innovision Odyssey will be ORAGAN’s flagship annual event, held on October 1, aimed at showcasing and launching new products to the public, investors, and media. It will be a high-profile event similar to major product launches by leading tech companies.",
+      description: "Innovision Odyssey will be ORAGAN’s flagship annual event, held on October 1, aimed at showcasing and launching new products to the public, investors, and media.",
       highlights: [
         "Showcase ORAGAN’s latest product innovations.",
         "Engage with media, customers, investors, and industry leaders.",

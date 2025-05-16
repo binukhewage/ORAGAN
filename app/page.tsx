@@ -237,7 +237,7 @@ export default function Home() {
         <motion.a
           whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
           whileTap={{ scale: 0.95 }}
-          href="/Products"
+          href="/products-page"
           className="w-full sm:w-auto text-center px-6 py-3 sm:px-8 sm:py-3.5 bg-transparent border border-white/30 text-white text-base sm:text-lg font-medium rounded-lg hover:bg-white/5 transition-all duration-300 inline-flex items-center justify-center gap-2"
         >
           Explore Products
