@@ -131,7 +131,7 @@ const ContactSection = () => {
               <div>
                 <h3 className="text-xl font-semibold text-white mb-2">Contact</h3>
                 <p className="text-gray-400">Mobile: +94 71 118 6006</p>
-                <p className="text-gray-400">Email: oragan.ist@gmail.com</p>
+                <p className="text-gray-400">Email: info@oragan-idea.com</p>
               </div>
             </div>
 

@@ -140,7 +140,7 @@ export default function Footer() {
                                     href="mailto:oragan.ist@gmail.com" 
                                     className="text-gray-400 hover:text-white transition-colors duration-300"
                                 >
-                                    oragan.ist@gmail.com
+                                   info@oragan-idea.com
                                 </a>
                             </div>
                             
