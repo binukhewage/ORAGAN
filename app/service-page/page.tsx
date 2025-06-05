@@ -9,7 +9,7 @@ import {
   faShapes,
   faRobot,
   faFlask,
-  faIndustry,
+  faIndustry, 
   faBullhorn,
   faFileSignature,
 } from "@fortawesome/free-solid-svg-icons";
@@ -120,58 +120,53 @@ const RDService = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[50px] w-full flex items-center justify-center">
+      <section className="relative h-[50vh] min-h-[400px] w-full flex items-center justify-center pt-28 sm:pt-0">
         {/* Background Video */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <video
+            <video
             autoPlay
             loop
             muted
             playsInline
             className="w-full h-full object-cover"
-          >
+            >
             <source
-              src={require("../../public/servicepagevid.mp4")}
-              type="video/mp4"
+                src={require("../../public/servicepagevid.mp4")}
+                type="video/mp4"
             />
             {/* Fallback image if video doesn't load */}
             <div className="absolute inset-0 bg-black"></div>
-          </video>
-          {/* Video overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/60"></div>
+            </video>
+            {/* Video overlay gradient */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/60"></div>
         </div>
 
-        <div className="relative z-10 w-full text-center px-4 sm:px-6 md:px-8 pt-12">
-          <motion.div
+        <div className="relative z-10 w-full text-center px-4 sm:px-6 md:px-8 pt-0 sm:pt-12">
+            <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-          >
-            {/*<h2 className="flex items-center justify-center text-xl md:text-xl mb-4">
-                            <span className="w-8 h-0.5 bg-gradient-to-r from-gray-300 to-white mr-3"></span>
-                            <span className='text-gray-300 pr-1 font-medium tracking-wider'>INNOVATION</span>
-                            <span className='text-white'>PARTNER FOR YOUR BUSINESS</span>
-                        </h2>*/}
+            >
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-3 leading-tight">
-              Innovate Smarter <span className="text-white">with ORAGAN</span>
+                Innovate Smarter <span className="text-white">with ORAGAN</span>
             </h1>
-            <h2 className="text-gray-400 text-base sm:text-lg">
-              We become your external R&D team — helping you solve problems,
-              develop new products, and bring ideas to life without the
-              overhead.
+            <h2 className="text-gray-400 text-base sm:text-lg px-2 sm:px-0">
+                We become your external R&D team — helping you solve problems,
+                develop new products, and bring ideas to life without the
+                overhead.
             </h2>
-            <h2 className="text-gray-400 text-sm sm:text-base mt-6 sm:mt-8 px-4 sm:px-10 md:px-20">
-              At ORAGAN Innovation Studio, we offer complete product development
-              and innovation services to businesses, startups, and
-              organizations. Whether you need to solve a technical problem,
-              modernize a process, or launch a new smart device — we act as your
-              dedicated external R&D team. From concept to commercialization,
-              we've got you covered.
+            <h2 className="text-gray-400 text-sm sm:text-base mt-4 sm:mt-8 px-2 sm:px-10 md:px-20">
+                At ORAGAN Innovation Studio, we offer complete product development
+                and innovation services to businesses, startups, and
+                organizations. Whether you need to solve a technical problem,
+                modernize a process, or launch a new smart device — we act as your
+                dedicated external R&D team. From concept to commercialization,
+                we've got you covered.
             </h2>
-          </motion.div>
+            </motion.div>
         </div>
-      </section>
+        </section>
 
       {/* Services Section */}
       <section className="relative w-full px-6 md:px-12 py-20">
