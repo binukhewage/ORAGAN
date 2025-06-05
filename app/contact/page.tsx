@@ -58,7 +58,7 @@ const ContactSection = () => {
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-white/5 rounded-full filter blur-[100px]"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 ">
+      <div className="pt-10 relative z-10 max-w-7xl mx-auto px-6 lg:px-8 ">
         {/* Section header */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -73,9 +73,9 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-6 leading-tight"
+            className="text-4xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 via-white to-gray-300 mb-4 leading-tight"
           >
-            Contact <span className="text-white">Us</span>
+            Connect With <span className="text-white"> Us</span>
           </motion.h1>
           
           <motion.p 
@@ -83,7 +83,7 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className='text-lg md:text-xl text-gray-400 max-w-3xl mx-auto'
+            className='text-lg md:text-lg text-gray-400 max-w-3xl mx-auto'
           >
             Have a project in mind or questions about our services? Reach out to our team.
           </motion.p>
