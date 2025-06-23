@@ -48,7 +48,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-300 leading-tight"
           >
-            Transforming Ideas Into Market-Ready Productss
+            Transforming Ideas Into Market-Ready Products
           </motion.h2>
         </motion.div>
 
